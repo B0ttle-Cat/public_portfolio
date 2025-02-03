@@ -37,7 +37,9 @@ namespace Pathfinding.ECS {
 		/// The index of the hierarchical node that the agent is currently in.
 		/// Will be -1 if the hierarchical node index is not known.
 		///
-		/// This field is valid during all system updates in the <see cref="AIMovementSystemGroup"/>. It is not guaranteed to be valid after that group has finished running, as graph updates may have changed the graph.
+		/// This field is valid during all system updates in the <see cref="AIMovementSystemGroup"/>.
+		/// It will be cleared at the end of that group by <see cref="JobClearTemporaryData"/>, so you'll typically not be able to observe it during other times.
+		/// It is cleared as a safety measure, as it is not guaranteed to be valid after that group has finished running, as graph updates may have changed the graph.
 		///
 		/// See: <see cref="HierarchicalGraph"/>
 		/// </summary>

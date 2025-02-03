@@ -5,22 +5,17 @@ namespace TFContent
 {
 	public class InitBehaviorCamera : OdccBehaviorTarget
 	{
-		public CameraManualUpdate manualUpdate;
-
 		protected override bool OnActionValid()
 		{
-			return manualUpdate != null;
+			return true;
 		}
 
 		protected override async Awaitable OnActionUpdate()
 		{
-			manualUpdate.ManualUpdate();
 		}
 
 		protected override void OnActionEnd()
 		{
-			DestroyThis();
-			manualUpdate = null;
 		}
 	}
 }

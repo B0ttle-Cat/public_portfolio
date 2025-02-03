@@ -52,6 +52,7 @@ namespace Pathfinding {
 	/// - Supports movement in both 2D and 3D games.
 	/// - Supports movement on spherical on non-planar worlds (see spherical) (view in online documentation for working links).
 	/// - Supports movement on grid graphs as well as navmesh/recast graphs.
+	/// - Not recommended on hexagonal graphs at the moment (though it does mostly work).
 	/// - Does <b>not</b> support movement on point graphs at the moment. This may be added in a future update.
 	/// - Supports time-scales greater than 1. The agent will automatically run multiple simulation steps per frame if the time-scale is greater than 1, to ensure stability.
 	/// - Supports off-mesh links. See offmeshlinks (view in online documentation for working links) for more info.
@@ -1657,6 +1658,7 @@ namespace Pathfinding {
 						// We need to check if the path is stale after each part because the path tracer may have realized that some nodes are destroyed
 						stale |= pathTracer.isStale;
 					}
+					pathTracer.Dispose();
 				}
 
 				nativeBuffer.AsUnsafeSpan().Reinterpret<Vector3>().CopyTo(buffer);
@@ -1864,7 +1866,9 @@ namespace Pathfinding {
 			if (path.IsDone()) autoRepathPolicy.OnPathCalculated(path.error);
 			ManagedState.SetPath(path, managedState, in movementPlane, ref destination);
 
-			if (path.IsDone()) {
+			// Check if we have started to follow the path.
+			// If it wasn't calculated yet, it will have just been scheduled to be calculated, and will be applied later.
+			if (managedState.activePath == path) {
 				agentCylinderShapeAccessRO.Update(entityManager);
 				movementSettingsAccessRO.Update(entityManager);
 				readyToTraverseOffMeshLinkRW.Update(entityManager);

@@ -257,6 +257,9 @@ namespace Pathfinding.Jobs {
 		/// JobHandle that represents a dependency for all jobs.
 		/// All native arrays that are written (and have been tracked by this tracker) to will have their final results in them
 		/// when the returned job handle is complete.
+		///
+		/// Warning: Even though all dependencies are complete, the returned JobHandle's IsCompleted property may still return false.
+		/// This seems to be a Unity bug (or maybe its by design?).
 		/// </summary>
 		public JobHandle AllWritesDependency {
 			get {
@@ -444,9 +447,14 @@ namespace Pathfinding.Jobs {
 		/// </summary>
 		void Dispose () {
 #if ENABLE_UNITY_COLLECTIONS_CHECKS && UNITY_2022_2_OR_NEWER
-			// Note: This can somehow fail in Unity 2021 and 2022.1, even when calling Complete on all jobs
-			UnityEngine.Assertions.Assert.IsTrue(AllWritesDependency.IsCompleted);
+			// Checks that AllWritesDependency is complete
+			// We cannot use AllWritesDependency directly because it's IsCompleted property may return false even though all individual dependencies are complete.
+			// (This seems to be a Unity bug)
+			for (int i = 0; i < slots.Count; i++) {
+				UnityEngine.Assertions.Assert.IsTrue(slots[i].lastWrite.handle.IsCompleted);
+			}
 #endif
+
 			for (int i = 0; i < slots.Count; i++) ListPool<JobInstance>.Release(slots[i].lastReads);
 
 			slots.Clear();

@@ -25,7 +25,7 @@ namespace Pathfinding {
 	[HelpURL("https://arongranberg.com/astar/documentation/stable/aidestinationsetter.html")]
 	public class AIDestinationSetter : VersionedMonoBehaviour
 #if MODULE_ENTITIES
-		, IComponentData, IRuntimeBaker
+		, IRuntimeBaker
 #endif
 	{
 		/// <summary>The object that the AI should move to</summary>
@@ -89,7 +89,7 @@ namespace Pathfinding {
 			// Do nothing except add the component. Actual syncing is handled by the SyncDestinationTransformSystem.
 			this.entity = entity;
 			this.world = world;
-			world.EntityManager.AddComponentData<AIDestinationSetter>(entity, this);
+			world.EntityManager.AddComponentObject(entity, this);
 		}
 #endif
 

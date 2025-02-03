@@ -11,5 +11,6 @@ AssetOrigin:
   productId: 173167
   packageName: Shapes
   packageVersion: 4.5.0
-  assetPath: Assets/Shapes/Shaders/Generated Materials/Polyline 2D ColorDodge (IS_JOIN_MESH).mat
+  assetPath: Assets/DownloadAssets/Shapes/Shaders/Generated Materials/Polyline 2D
+    ColorDodge (IS_JOIN_MESH).mat
   uploadId: 705858

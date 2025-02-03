@@ -15,7 +15,8 @@ namespace Pathfinding.ECS {
 			// It cannot change between simulation steps anyway.
 			if (!AIMovementSystemGroup.TimeScaledRateManager.IsFirstSubstep) return;
 
-			foreach (var(point, destinationSetter) in SystemAPI.Query<RefRW<DestinationPoint>, AIDestinationSetter>()) {
+			foreach (var(point, destinationSetterWrapper) in SystemAPI.Query<RefRW<DestinationPoint>, SystemAPI.ManagedAPI.UnityEngineComponent<AIDestinationSetter> >()) {
+				var destinationSetter = destinationSetterWrapper.Value;
 				if (destinationSetter.target != null) {
 					point.ValueRW = new DestinationPoint {
 						destination = destinationSetter.target.position,

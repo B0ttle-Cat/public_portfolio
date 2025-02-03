@@ -1,3 +1,18 @@
+## 5.3.3 (2025-01-31)
+- Fixed scanning grid graphs in Unity 6000.0.36f1+ would throw an exception, due to changes to unity's job system.
+
+## 5.3.2 (2025-01-27)
+- Fixed compatibility with com.unity.entities version 1.3.9 (latest version at the time of this update).
+- Fixed an out of range exception that could happen when using local avoidance and the latest burst package was installed (it was optimizing away my error checking!).
+- Fixed a rare edge case that could cause the \reflink{FunnelModifier} on the High setting to produce a weird looking path that included some backtracking.
+- Fixed an exception could be thrown when cameras were rendered without a color target.
+- Fixed a race condition that could in rare cases cause an exception to be thrown from \reflink{FollowerEntity.SearchPath}.
+- Fixed scanning grid graphs with invalid settings could throw an exception.
+- \reflink{GridGraph.SetDimensions} will now throw an exception if the given width, depth or node size is less than or equal to zero.
+- \reflink{MovementState.hierarchicalNodeIndex} and \reflink{MovementControl.hierarchicalNodeIndex} are now set to -1 at the end of the \reflink{AIMovementSystemGroup} to prevent accidental use of stale data.
+- Fixed the \reflink{FollowerEntity} would sometimes still use gravity during traversal of off-mesh links, even if the built-in movement was disabled.
+- Fixed a memory leak that could sometimes happen when calling \reflink{FollowerEntity.GetRemainingPath}.
+
 ## 5.3.1 (2025-01-13)
 - Fixed a regression in 5.3.0 causing navmesh cutting to be much slower than it should be.
 - Fixed triangle nodes on recast/navmesh graphs with no adjacent triangles would not be able to be traversed via off-mesh links.

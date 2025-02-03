@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c02bb70996b49eba31d0c206e28da24, type: 3}
   m_Name: GameSequenceBlackboard
   m_EditorClassIdentifier: 
-  VersionTimestamp: 638730601759312763
+  VersionTimestamp: 638733608504686275
   AssetID:
     m_Value0: 11851741672453156897
     m_Value1: 6427764772058097931
@@ -21,6 +21,7 @@ MonoBehaviour:
     - rid: 2779451523685154864
     - rid: 2779451523685154865
     - rid: 2779451523685154867
+    - rid: 2779451603690979383
   m_SharedBlackboardVariableGuids:
   - m_Value0: 5564016823131088349
     m_Value1: 13112662577875487239
@@ -28,6 +29,8 @@ MonoBehaviour:
     m_Value1: 2146673147118688961
   - m_Value0: 6776790655267189446
     m_Value1: 14100414135595016960
+  - m_Value0: 2101742156588613593
+    m_Value1: 8928277366368825385
   references:
     version: 2
     RefIds:
@@ -55,6 +58,14 @@ MonoBehaviour:
           m_Value1: 14100414135595016960
         Name: ExitPlayGame
         m_Value: {fileID: 11400000, guid: 846232a22879abc4293844a228f3dba7, type: 2}
+    - rid: 2779451603690979383
+      type: {class: 'BlackboardVariable`1[[System.Boolean, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 2101742156588613593
+          m_Value1: 8928277366368825385
+        Name: IsReady
+        m_Value: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,7 +85,8 @@ MonoBehaviour:
   - rid: 2779451523685154862
   - rid: 2779451523685154863
   - rid: 2779451523685154866
-  m_VersionTimestamp: 638730601759312763
+  - rid: 2779451603690979382
+  m_VersionTimestamp: 638733608504686275
   m_CommandBuffer:
     m_Commands: []
   m_RuntimeBlackboardAsset: {fileID: -294525098816742374}
@@ -111,3 +123,13 @@ MonoBehaviour:
         IsExposed: 1
         m_IsShared: 1
         m_Value: {fileID: 11400000, guid: 846232a22879abc4293844a228f3dba7, type: 2}
+    - rid: 2779451603690979382
+      type: {class: 'TypedVariableModel`1[[System.Boolean, mscorlib]]', ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
+      data:
+        ID:
+          m_Value0: 2101742156588613593
+          m_Value1: 8928277366368825385
+        Name: IsReady
+        IsExposed: 0
+        m_IsShared: 1
+        m_Value: 0

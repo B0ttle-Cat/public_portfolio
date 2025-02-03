@@ -12,29 +12,25 @@ namespace TFContent
 	public class WorldObjectData : ScriptableObject
 	{
 		[FoldoutGroup("TerrainObject")]
+		public ResourcesKey<GameObject> AstarPathObject;
+
+		[FoldoutGroup("TerrainObject")]
 		public ResourcesKey<GameObject> TerrainObject;
 		[FoldoutGroup("PrefabBuilderGroup")]
 		public ResourcesKey<GameObject> PrefabBuilderGroup;
 		[FoldoutGroup("OtherObjectGroup")]
 		public ResourcesKey<GameObject> OtherObjectGroup;
 
+		[FoldoutGroup("FogOfWarWorld Object")]
+		public ResourcesKey<GameObject> FogOfWarObject;
+
 		public void OnValidate()
 		{
+			AstarPathObject.OnValidate();
 			TerrainObject.OnValidate();
 			PrefabBuilderGroup.OnValidate();
 			OtherObjectGroup.OnValidate();
-		}
-
-		[ButtonGroup("SaveLoad")]
-		public string SaveData()
-		{
-			return JsonUtility.ToJson(this, true);
-		}
-		[ButtonGroup("SaveLoad")]
-		public void LoadData(string jsonData)
-		{
-			if(string.IsNullOrWhiteSpace(jsonData)) return;
-			JsonUtility.FromJsonOverwrite(jsonData, this);
+			FogOfWarObject.OnValidate();
 		}
 	}
 }

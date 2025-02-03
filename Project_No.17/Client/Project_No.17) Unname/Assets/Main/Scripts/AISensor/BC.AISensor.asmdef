@@ -1,0 +1,25 @@
+{
+    "name": "BC.AISensor",
+    "rootNamespace": "BC.AISensor",
+    "references": [
+        "GUID:734d92eba21c94caba915361bd5ac177",
+        "GUID:e0cd26848372d4e5c891c569017e11f1",
+        "GUID:63afb046c8423dd448ae7aba042ea63d",
+        "GUID:2665a8d13d1b3f18800f46e256720795",
+        "GUID:d8b63aba1907145bea998dd612889d6b",
+        "GUID:7aa6ab5ead1fe264493d2913bdea2fe1",
+        "GUID:32c0207fd50e2e34eae82fd7843d237a",
+        "GUID:690ac2b3660f4d04e9e15db20769255f",
+        "GUID:affbf03965d031849a468da2d1487804",
+        "GUID:13a6fdc14ca9df84eb8019bc66fa9e5d"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

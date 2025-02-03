@@ -1,0 +1,21 @@
+{
+    "name": "BC.Shape",
+    "rootNamespace": "BC.Shape",
+    "references": [
+        "GUID:13a6fdc14ca9df84eb8019bc66fa9e5d",
+        "GUID:7aa6ab5ead1fe264493d2913bdea2fe1",
+        "GUID:32c0207fd50e2e34eae82fd7843d237a",
+        "GUID:690ac2b3660f4d04e9e15db20769255f",
+        "GUID:15fc0a57446b3144c949da3e2b9737a9",
+        "GUID:d8b63aba1907145bea998dd612889d6b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

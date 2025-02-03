@@ -1,5 +1,6 @@
 AstarPath.AstarDistribution	astarpath.html#AstarDistribution	Information about where the package was downloaded.
 AstarPath.Branch	astarpath.html#Branch	Which branch of the A* Pathfinding Project is this release. \n\nUsed when checking for updates so that users of the development versions can get notifications of development updates.
+AstarPath.DestroyGraphPromise.graph	destroygraphpromise.html#graph	
 AstarPath.Distribution	astarpath.html#Distribution	Used by the editor to guide the user to the correct place to download updates.
 AstarPath.IsAnyGraphUpdateInProgress	astarpath.html#IsAnyGraphUpdateInProgress	Returns if any graph updates are being calculated right now. \n\n[more in online documentation]
 AstarPath.IsAnyGraphUpdateQueued	astarpath.html#IsAnyGraphUpdateQueued	Returns if any graph updates are waiting to be applied. \n\n[more in online documentation]
@@ -844,7 +845,7 @@ Pathfinding.ECS.MovementState.endOfPath	movementstate.html#endOfPath	The end of 
 Pathfinding.ECS.MovementState.flags	movementstate.html#flags	Bitmask for various flags.
 Pathfinding.ECS.MovementState.followerState	movementstate.html#followerState	State of the PID controller for the movement.
 Pathfinding.ECS.MovementState.graphIndex	movementstate.html#graphIndex	The index of the graph that the agent is currently traversing. \n\nWill be GraphNode.InvalidGraphIndex if the agent has no path, or the node that the agent is traversing has been destroyed.
-Pathfinding.ECS.MovementState.hierarchicalNodeIndex	movementstate.html#hierarchicalNodeIndex	The index of the hierarchical node that the agent is currently in. \n\nWill be -1 if the hierarchical node index is not known.\n\nThis field is valid during all system updates in the AIMovementSystemGroup. It is not guaranteed to be valid after that group has finished running, as graph updates may have changed the graph.\n\n[more in online documentation]
+Pathfinding.ECS.MovementState.hierarchicalNodeIndex	movementstate.html#hierarchicalNodeIndex	The index of the hierarchical node that the agent is currently in. \n\nWill be -1 if the hierarchical node index is not known.\n\nThis field is valid during all system updates in the AIMovementSystemGroup. It will be cleared at the end of that group by JobClearTemporaryData, so you'll typically not be able to observe it during other times. It is cleared as a safety measure, as it is not guaranteed to be valid after that group has finished running, as graph updates may have changed the graph.\n\n[more in online documentation]
 Pathfinding.ECS.MovementState.isOnValidNode	movementstate.html#isOnValidNode	True if the agent is currently on a valid node. \n\nThis is true if the agent has a path, and the node that the agent is traversing is walkable and not destroyed.\n\nIf false, the hierarchicalNodeIndex and graphIndex fields are invalid.
 Pathfinding.ECS.MovementState.nextCorner	movementstate.html#nextCorner	The next corner in the path.
 Pathfinding.ECS.MovementState.pathTracerVersion	movementstate.html#pathTracerVersion	Version number of PathTracer.version when the movement state was last updated. \n\nIn particular, closestOnNavmesh, nextCorner, endOfPath, remainingDistanceToEndOfPart, reachedDestination and reachedEndOfPath will only be considered up to date if this is equal to the current version number of the path tracer.
@@ -2600,7 +2601,7 @@ Pathfinding.Jobs.JobDependencyAnalyzer.SpanPtrOffset	jobdependencyanalyzer.html#
 Pathfinding.Jobs.JobDependencyAnalyzer.reflectionData	jobdependencyanalyzer.html#reflectionData	
 Pathfinding.Jobs.JobDependencyAnalyzerAssociated.jobCounter	jobdependencyanalyzerassociated.html#jobCounter	
 Pathfinding.Jobs.JobDependencyAnalyzerAssociated.tempJobDependencyHashes	jobdependencyanalyzerassociated.html#tempJobDependencyHashes	
-Pathfinding.Jobs.JobDependencyTracker.AllWritesDependency	jobdependencytracker.html#AllWritesDependency	JobHandle that represents a dependency for all jobs. \n\nAll native arrays that are written (and have been tracked by this tracker) to will have their final results in them when the returned job handle is complete.
+Pathfinding.Jobs.JobDependencyTracker.AllWritesDependency	jobdependencytracker.html#AllWritesDependency	JobHandle that represents a dependency for all jobs. \n\nAll native arrays that are written (and have been tracked by this tracker) to will have their final results in them when the returned job handle is complete.\n\n[more in online documentation]
 Pathfinding.Jobs.JobDependencyTracker.JobInstance.handle	jobinstance.html#handle	
 Pathfinding.Jobs.JobDependencyTracker.JobInstance.hash	jobinstance.html#hash	
 Pathfinding.Jobs.JobDependencyTracker.JobOverlapCapsuleCommandDummy.commands	joboverlapcapsulecommanddummy.html#commands	
@@ -3446,6 +3447,7 @@ Pathfinding.RVO.RVOQuadtreeBurst.BitPackingShift	rvoquadtreeburst.html#BitPackin
 Pathfinding.RVO.RVOQuadtreeBurst.ChildLookup	rvoquadtreeburst.html#ChildLookup	For a given number, contains the index of the first non-zero bit. \n\nOnly the values 0 through 15 are used when movementPlane is XZ or XY.\n\nUse bytes instead of ints to save some precious L1 cache memory.
 Pathfinding.RVO.RVOQuadtreeBurst.DebugDrawJob.draw	debugdrawjob.html#draw	
 Pathfinding.RVO.RVOQuadtreeBurst.DebugDrawJob.quadtree	debugdrawjob.html#quadtree	
+Pathfinding.RVO.RVOQuadtreeBurst.DistanceInfinity	rvoquadtreeburst.html#DistanceInfinity	A very large distance. \n\nUsed as a sentinel value in the QueryKNearest method. We don't use actual infinity, because the code may be compiled using FastMath, which makes the compiler assume that infinities do not exist. This should be much larger than any distance used in practice.
 Pathfinding.RVO.RVOQuadtreeBurst.JobBuild.agentPositions	jobbuild.html#agentPositions	
 Pathfinding.RVO.RVOQuadtreeBurst.JobBuild.agentRadii	jobbuild.html#agentRadii	
 Pathfinding.RVO.RVOQuadtreeBurst.JobBuild.agentSpeeds	jobbuild.html#agentSpeeds	

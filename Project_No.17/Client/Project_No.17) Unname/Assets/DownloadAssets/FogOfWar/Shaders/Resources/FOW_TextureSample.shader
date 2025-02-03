@@ -1,10 +1,5 @@
 Shader "Hidden/FullScreen/FOW/TextureSample"
 {
-    Properties
-    {
-        _MainTex ("Texture", 2D) = "white" {}
-        _fowTexture("Texture", 2D) = "white" {}
-    }
     SubShader
     {
         // No culling or depth
@@ -12,42 +7,28 @@ Shader "Hidden/FullScreen/FOW/TextureSample"
 
         Pass
         {
-            CGPROGRAM
-            #pragma multi_compile_local PLANE_XZ PLANE_XY PLANE_ZY
+            HLSLPROGRAM
             #pragma multi_compile_local IS_2D IS_3D
 
-            #pragma vertex vert
-            #pragma fragment frag
+            #pragma multi_compile_fragment _ _GBUFFER_NORMALS_OCT
+            //unity 2020 normal texture is VS, not WS. you can just remove this if you care about the extra varients.
+            #pragma multi_compile_fragment _ _VS_NORMAL
 
-            #include "UnityCG.cginc"
+            #pragma vertex Vert
+            #pragma fragment Frag
+
             #include_with_pragmas "FogOfWarLogic.hlsl"
+            
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+            #include "Packages/com.unity.render-pipelines.core/Runtime/Utilities/Blit.hlsl"
 
-            struct appdata
-            {
-                float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
-            };
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/DeclareDepthTexture.hlsl"
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/DeclareNormalsTexture.hlsl"
 
-            struct v2f
-            {
-                float2 uv : TEXCOORD0;
-                float4 vertex : SV_POSITION;
-            };
-
-            v2f vert (appdata v)
-            {
-                v2f o;
-                o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = v.uv;
-                return o;
-            }
-
-            sampler2D _MainTex;
-            float4 _MainTex_TexelSize;
-            sampler2D _CameraDepthTexture;
-            sampler2D _CameraDepthNormalsTexture;
-
-            float4x4 _camToWorldMatrix;
+            #if UNITY_VERSION <= 202310
+            uniform float4 _BlitTexture_TexelSize;
+            #endif
+            
             float4x4 _inverseProjectionMatrix;
 
             float _maxDistance;
@@ -59,46 +40,49 @@ Shader "Hidden/FullScreen/FOW/TextureSample"
             bool _skipTriplanar;
             float3 _fowAxis;
 
-            fixed4 frag (v2f i) : SV_Target
+            float4x4 _camToWorldMatrix;
+
+            float4 Frag (Varyings i) : SV_Target
             {
-                fixed4 color = tex2D(_MainTex, i.uv);
+                //float4 color = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv);
+                float4 color = SAMPLE_TEXTURE2D_X_LOD(_BlitTexture, sampler_LinearRepeat, i.texcoord, _BlitMipLevel);
 
                 float2 pos;
                 float height;
-#if IS_2D
+            #if IS_2D
                 
-                pos = (i.uv * float2(2,2) - float2(1,1)) * _cameraSize * float2(_MainTex_TexelSize.z/ _MainTex_TexelSize.w,1);
+                pos = (i.texcoord * float2(2,2) - float2(1,1)) * _cameraSize * float2(_BlitTexture_TexelSize.z / _BlitTexture_TexelSize.w, 1);
                 pos+= _cameraPosition;
                 Unity_Rotate_Degrees_float(pos, _cameraPosition, -_cameraRotation, pos);
                 height = 0;
                 float2 uvSample = pos + (_Time * _fowScrollSpeed);
                 float4 fogColor = tex2D(_fowTexture, uvSample * _fowTiling);
-#elif IS_3D
-                const float2 p11_22 = float2(unity_CameraProjection._11, unity_CameraProjection._22);
-                const float2 p13_31 = float2(unity_CameraProjection._13, unity_CameraProjection._23);
-                const float isOrtho = unity_OrthoParams.w;
-                const float near = _ProjectionParams.y;
-                const float far = _ProjectionParams.z;
+            #elif IS_3D
+                float2 uv = i.texcoord;
 
-                float4 depthnormal = tex2D(_CameraDepthNormalsTexture, i.uv);
-                float d;
-                float3 normal;
-                DecodeDepthNormal(depthnormal, d, normal);
-                d = SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, i.uv); // non-linear Z
+            #if UNITY_REVERSED_Z
+                real depth = SampleSceneDepth(i.texcoord);
+            #else
+                real depth = lerp(UNITY_NEAR_CLIP_VALUE, 1, SampleSceneDepth(i.texcoord));
+            #endif
 
-        #if defined(UNITY_REVERSED_Z)
-                d = 1 - d;
-        #endif
-                float zOrtho = lerp(near, far, d);
-                float zPers = near * far / lerp(far, near, d);
-                float vz = lerp(zPers, zOrtho, isOrtho);
-                if (vz > _maxDistance)
+                float3 vpos = ComputeViewSpacePosition(i.texcoord, depth, UNITY_MATRIX_I_P);
+                if (vpos.z > _maxDistance)
                     return color;
 
-                float3 vpos = float3((i.uv * 2 - 1 - p13_31) / p11_22 * lerp(vz, 1, isOrtho), -vz);
+                vpos.z*=-1;
                 float4 worldPos = mul(_camToWorldMatrix, float4(vpos, 1));
 
+                GetFowSpacePosition(worldPos, pos, height);
+
+                float3 normal = SampleSceneNormals(uv);
+            #if _VS_NORMAL
+                //this was required in unity 2020.3.28. when updating to 2020.3.48, its no longer required. not sure what version fixes it exactly.
+                normal.z*=-1;   //unity can suck my.....
                 normal = mul((float3x3)_camToWorldMatrix, normal);
+                return float4(1, 1, 1, 1);
+            #endif
+
                 float3 powResult = pow(abs(normal), 8);
                 float dotResult = dot(powResult, float3(1, 1, 1));
                 //float3 lerpVals = round(powResult / dotResult);
@@ -113,20 +97,18 @@ Shader "Hidden/FullScreen/FOW/TextureSample"
                 float4 fogColor = tex2D(_fowTexture, uvSample1 * _fowTiling) * lerpVals.x;
                 fogColor += tex2D(_fowTexture, uvSample2 * _fowTiling) * lerpVals.y;
                 fogColor += tex2D(_fowTexture, uvSample3 * _fowTiling) * lerpVals.z;
-
-                GetFowSpacePosition(worldPos, pos, height);
-#endif
+            #endif
 
                 float coneCheckOut = 0;
                 FOW_Sample_float(pos, height, coneCheckOut);
-                
-                //fixed4 fogColor = tex2D(_fowTexture, uvSample * _fowTiling);
+
+                //float4 fogColor = tex2D(_fowTexture, uvSample * _fowTiling) * lerpVals.x;
                 fogColor = lerp(color, fogColor, _unKnownColor.w);
                 OutOfBoundsCheck(pos, color);
                 OutOfBoundsCheck(pos, fogColor);
                 return float4(lerp(fogColor.rgb * _unKnownColor, color.rgb, coneCheckOut), color.a);
             }
-            ENDCG
+            ENDHLSL
         }
     }
 }

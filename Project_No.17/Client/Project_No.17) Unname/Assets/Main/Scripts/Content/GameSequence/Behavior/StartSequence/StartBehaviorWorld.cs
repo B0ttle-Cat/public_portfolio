@@ -21,7 +21,6 @@ namespace TFContent
 
 		protected override void OnActionEnd()
 		{
-			DestroyThis();
 		}
 	}
 }

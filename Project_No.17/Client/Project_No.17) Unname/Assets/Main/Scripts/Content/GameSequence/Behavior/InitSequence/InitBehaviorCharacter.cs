@@ -1,4 +1,5 @@
-﻿using BC.OdccBase;
+﻿using BC.AISensor;
+using BC.OdccBase;
 
 using TFSystem;
 
@@ -8,43 +9,50 @@ namespace TFContent
 	[ExecuteInEditMode]
 	public class InitBehaviorCharacter : OdccBehaviorTarget
 	{
+		private CharacterSystem characterSystem;
 		private CharacterObjectData characterData;
+		private IFFMatchingInfoData iffData;
+		protected override void BaseAwake()
+		{
+#if UNITY_EDITOR
+			int childCount = transform.childCount;
+			for(int i = 0 ; i < childCount ; i++)
+			{
+				if(transform.GetChild(i).gameObject.tag =="EditorOnly")
+				{
+					DestroyImmediate(transform.GetChild(i).gameObject);
+					i--;
+					childCount--;
+				}
+			}
+#endif
+		}
 
 		protected override bool OnActionValid()
 		{
+			characterSystem = ThisContainer.GetObject<CharacterSystem>();
 			characterData = DataCarrier.GetSeparate<GameContentLoader>().GetData<CharacterObjectData>();
-#if UNITY_EDITOR
-			if(TryGetComponent<PreviewCharacterObjectData>(out var preview))
-			{
-				Destroy(preview);
-			}
-#endif
+			iffData = DataCarrier.GetSeparate<GameContentLoader>().GetData<IFFMatchingInfoData>();
 			return true;
 		}
 
 		protected override async Awaitable OnActionUpdate()
 		{
+			if(characterSystem == null) return;
 			if(characterData == null) return;
+
 			var prefabDatas = characterData.prefabDatas;
 			int length = prefabDatas.Count;
 			for(int i = 0 ; i < length ; i++)
 			{
 				var prefabData = prefabDatas[i];
-
-				GameObject[] newObjects = await InstantiateAsync(prefabData.Prefab, transform);
-				int create = newObjects.Length;
-				for(int ii = 0 ; ii < length ; ii++)
-				{
-					var newObject = newObjects[i];
-					newObject.transform.SetLocalPositionAndRotation(prefabData.position, Quaternion.Euler(prefabData.rotation));
-					newObject.transform.localScale = prefabData.scale;
-				}
+				GameObject newCharacterObject = await characterSystem.CreateCharacter(prefabData, prefabData.IFFTeamID == iffData.userControlTeamID);
+				if(newCharacterObject != null) newCharacterObject.SetActive(false);
 			}
 		}
 
 		protected override void OnActionEnd()
 		{
-			DestroyThis();
 		}
 	}
 }

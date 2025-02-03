@@ -11,5 +11,6 @@ AssetOrigin:
   productId: 173167
   packageName: Shapes
   packageVersion: 4.5.0
-  assetPath: Assets/Shapes/Shaders/Generated Materials/Rect Screen (CORNER_RADIUS).mat
+  assetPath: Assets/DownloadAssets/Shapes/Shaders/Generated Materials/Rect Screen
+    (CORNER_RADIUS).mat
   uploadId: 705858

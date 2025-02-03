@@ -18,8 +18,9 @@ namespace TFSystem.UI
 		[SerializeField, EnumPaging]
 		private TViewState initViewState;
 #if UNITY_EDITOR
-		protected override void BaseValidate()
+		protected override void BaseValidate(in bool isPrefab = false)
 		{
+			if(isPrefab) return;
 			IUIViewController<TViewState> uiViewController = this;
 			uiViewController.OnInitViewState(initViewState);
 		}

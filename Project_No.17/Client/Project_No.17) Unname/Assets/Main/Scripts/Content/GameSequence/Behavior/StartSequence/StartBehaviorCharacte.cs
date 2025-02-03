@@ -11,11 +11,15 @@ namespace TFContent
 		}
 		protected override async Awaitable OnActionUpdate()
 		{
-			await Awaitable.NextFrameAsync();
+			var characters = GetComponentsInChildren<CharacterObject>(true);
+			int length = characters.Length;
+			for(int i = 0 ; i < length ; i++)
+			{
+				characters[i].gameObject.SetActive(true);
+			}
 		}
 		protected override void OnActionEnd()
 		{
-			DestroyThis();
 		}
 	}
 }

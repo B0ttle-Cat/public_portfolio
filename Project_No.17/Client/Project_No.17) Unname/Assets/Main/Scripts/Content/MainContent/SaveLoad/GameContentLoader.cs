@@ -1,4 +1,5 @@
-﻿using BC.OdccBase;
+﻿using BC.AISensor;
+using BC.OdccBase;
 
 using Sirenix.OdinInspector;
 
@@ -12,14 +13,20 @@ namespace TFContent
 	{
 		public SaveSlotIO.SlotID currentSlotID;
 
-		[InlineEditor(objectFieldMode:InlineEditorObjectFieldModes.Boxed, Expanded = true), TabGroup("LoadableData", nameof(WorldObjectData))]
+		[InlineEditor(objectFieldMode:InlineEditorObjectFieldModes.Boxed, Expanded = true), TabGroup("LoadableData", "World", TabLayouting = TabLayouting.Shrink)]
 		public WorldObjectData worldObjectData;
 
-		[InlineEditor(objectFieldMode:InlineEditorObjectFieldModes.Boxed, Expanded = true), TabGroup("LoadableData", nameof(CharacterObjectData))]
+		[InlineEditor(objectFieldMode:InlineEditorObjectFieldModes.Boxed, Expanded = true), TabGroup("LoadableData", "Character", TabLayouting = TabLayouting.Shrink)]
 		public CharacterObjectData characterObjectData;
 
-		[InlineEditor(objectFieldMode:InlineEditorObjectFieldModes.Boxed, Expanded = true), TabGroup("LoadableData", nameof(SaveLoadObjectData))]
+		[InlineEditor(objectFieldMode:InlineEditorObjectFieldModes.Boxed, Expanded = true), TabGroup("LoadableData", "SaveLoad", TabLayouting = TabLayouting.Shrink)]
 		public SaveLoadObjectData saveLoadObjectData;
+
+		[InlineEditor(objectFieldMode:InlineEditorObjectFieldModes.Boxed, Expanded = true), TabGroup("LoadableData", "Scenario", TabLayouting = TabLayouting.Shrink)]
+		public ScenarioObjectData scenarioObjectData;
+
+		[InlineEditor(objectFieldMode:InlineEditorObjectFieldModes.Boxed, Expanded = true), TabGroup("LoadableData", "IFFMatching", TabLayouting = TabLayouting.Shrink)]
+		public IFFMatchingInfoData iffMatchingInfoData;
 		protected override bool OnActionValid()
 		{
 			return true;
@@ -34,17 +41,19 @@ namespace TFContent
 				worldObjectData = slotData.GetData<WorldObjectData>();
 				characterObjectData = slotData.GetData<CharacterObjectData>();
 				saveLoadObjectData = slotData.GetData<SaveLoadObjectData>();
+				scenarioObjectData = slotData.GetData<ScenarioObjectData>();
+				iffMatchingInfoData = slotData.GetData<IFFMatchingInfoData>();
 			}
 			DataCarrier.DeleteSeparate<GameContentLoader>();
 			DataCarrier.GetSeparate<GameContentLoader>().SetData<WorldObjectData>(worldObjectData);
 			DataCarrier.GetSeparate<GameContentLoader>().SetData<CharacterObjectData>(characterObjectData);
 			DataCarrier.GetSeparate<SaveLoadObjectData>().SetData<SaveLoadObjectData>(saveLoadObjectData);
+			DataCarrier.GetSeparate<ScenarioObjectData>().SetData<ScenarioObjectData>(scenarioObjectData);
+			DataCarrier.GetSeparate<ScenarioObjectData>().SetData<IFFMatchingInfoData>(iffMatchingInfoData);
 		}
 
 		protected override void OnActionEnd()
 		{
-			DestroyThis();
-
 		}
 
 

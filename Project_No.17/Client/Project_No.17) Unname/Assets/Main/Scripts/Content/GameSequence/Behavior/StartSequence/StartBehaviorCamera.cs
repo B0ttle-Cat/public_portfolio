@@ -14,12 +14,13 @@ namespace TFContent
 
 		protected override async Awaitable OnActionUpdate()
 		{
+
+			manualUpdate.enabled = true;
 			manualUpdate.ManualUpdate();
 		}
 
 		protected override void OnActionEnd()
 		{
-			DestroyThis();
 			manualUpdate = null;
 		}
 	}

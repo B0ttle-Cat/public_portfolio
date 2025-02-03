@@ -1,4 +1,5 @@
 ﻿#if UNITY_EDITOR
+using System;
 using System.Collections.Generic;
 
 using BC.Base;
@@ -21,11 +22,13 @@ namespace TFContent
 		private CharacterObjectData CharacterData => gameContentLoader == null ? null : gameContentLoader.characterObjectData;
 		private void OnEnable()
 		{
+			if(EditorApplication.isPlaying) return;
 			ResetCurrentData();
 		}
 
 		private void OnDisable()
 		{
+			if(EditorApplication.isPlaying) return;
 			ClearPreviews();
 		}
 
@@ -48,8 +51,9 @@ namespace TFContent
 			for(int i = 0 ; i < prefabData.Count ; i++)
 			{
 				var data = prefabData[i];
+				var prefab = data.Prefab.gameObject;
 				// 프리뷰 오브젝트 생성
-				GameObject preview = PrefabUtility.InstantiatePrefab(data.Prefab, previewParent) as GameObject;
+				GameObject preview = PrefabUtility.InstantiatePrefab(prefab, previewParent) as GameObject;
 				if(preview != null)
 				{
 					preview.tag = "EditorOnly";
@@ -58,25 +62,13 @@ namespace TFContent
 					previewTr.localRotation = Quaternion.Euler(data.rotation);
 					previewTr.localScale = data.scale;
 
-					int childCount = previewTr.childCount;
-					for(int c = 0 ; c < childCount ; c++)
-					{
-						previewTr.GetChild(c).gameObject.hideFlags = HideFlags.HideInHierarchy;
-					}
-					var components = preview.GetComponents<Component>();
-					foreach(var component in components)
-					{
-						if(component is Transform componentTr)
-						{
-							continue;
-						}
-						component.hideFlags = HideFlags.HideInInspector;
-					}
-					previewTr.hideFlags = HideFlags.DontSave;
+					//preview.hideFlags = HideFlags.DontSave;
+					//HideObjectInEditor(preview);
 				}
 			}
 		}
 
+		[ButtonGroup("PreviewButton")]
 		private void ClearPreviews()
 		{
 			if(previewParent == null) return;
@@ -84,12 +76,11 @@ namespace TFContent
 			int childCount = previewParent.childCount;
 			for(int i = 0 ; i < childCount ; i++)
 			{
-				var childTr = previewParent.GetChild(0);
-				var childObj = childTr.gameObject;
-
-				if(PrefabUtility.GetPrefabInstanceStatus(childObj) == PrefabInstanceStatus.Connected)
+				//if(previewParent.GetChild(i).gameObject.tag =="EditorOnly")
 				{
-					DestroyImmediate(childObj);
+					DestroyImmediate(previewParent.GetChild(i).gameObject);
+					i--;
+					childCount--;
 				}
 			}
 		}
@@ -110,21 +101,54 @@ namespace TFContent
 				if(PrefabUtility.GetPrefabInstanceStatus(childObj) == PrefabInstanceStatus.Connected)
 				{
 					GameObject prefab = PrefabUtility.GetCorrespondingObjectFromSource(childObj);
-					previewData.Add(new CharacterObjectData.PrefabData() {
-						prefab = new ResourcesKey<GameObject>(prefab),
-						position = childTr.localPosition,
-						rotation = childTr.localRotation.eulerAngles,
-						scale = prefab.transform.localScale
-					});
+					if(prefab.TryGetComponent<CharacterObject>(out var character))
+					{
+						previewData.Add(new CharacterObjectData.PrefabData() {
+							prefab = new ResourcesKey<CharacterObject>(prefab),
+							position = childTr.localPosition,
+							rotation = childTr.localRotation.eulerAngles,
+							scale = prefab.transform.localScale
+						});
+					}
 				}
 			}
-
 			if(CharacterData == null) return;
 			CharacterData.prefabDatas = previewData;
 			CharacterData.OnValidate();
 			EditorUtility.SetDirty(CharacterData);
 			AssetDatabase.SaveAssets();
 			ResetCurrentData();
+		}
+
+		void HideObjectInEditor(GameObject previewObject)
+		{
+			if(previewObject == null) return;
+			Transform previewTr = previewObject.transform;
+			int childCount = previewTr.childCount;
+			for(int c = 0 ; c < childCount ; c++)
+			{
+				Traverse(previewTr.GetChild(c), (tr) => {
+					tr.gameObject.hideFlags = HideFlags.NotEditable | HideFlags.DontSave;
+				});
+			}
+			var components = previewObject.GetComponents<Component>();
+			foreach(var component in components)
+			{
+				if(component is Transform componentTr)
+				{
+					continue;
+				}
+				component.hideFlags = HideFlags.NotEditable | HideFlags.DontSave;
+			}
+
+			void Traverse(Transform current, Action<Transform> action)
+			{
+				action?.Invoke(current);
+				foreach(Transform child in current)
+				{
+					Traverse(child, action);
+				}
+			}
 		}
 	}
 }

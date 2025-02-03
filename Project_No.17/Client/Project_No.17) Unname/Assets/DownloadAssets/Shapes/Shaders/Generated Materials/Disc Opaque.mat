@@ -27,10 +27,10 @@ Material:
     m_Floats:
     - _ColorMask: 15
     - _StencilComp: 8
-    - _StencilID: 0
+    - _StencilID: 1
     - _StencilOp: 0
-    - _StencilOpPass: 0
-    - _StencilReadMask: 255
+    - _StencilOpPass: 2
+    - _StencilReadMask: 0
     - _StencilWriteMask: 255
     - _ZOffsetFactor: 0
     - _ZOffsetUnits: 0

@@ -103,6 +103,8 @@ namespace TFContent
 		[ButtonGroup("Load")]
 		internal virtual void OnLoadInstance(string objectPath, List<SaveLoadData> dataList)
 		{
+			if(string.IsNullOrWhiteSpace(objectPath) || dataList == null) return;
+
 			if(TryGetComponent<ObjectBehaviour>(out _))
 			{
 				Debug.LogError("ObjectBehaviour와 동일한 위치에 있어야 합니다.");
@@ -139,6 +141,8 @@ namespace TFContent
 		[ButtonGroup("Load")]
 		internal virtual void OnLoadSubInstance()
 		{
+			if(string.IsNullOrWhiteSpace(objectPath) || dataList == null) return;
+
 			gameObject.SetActive(false);
 
 			int length = dataList.Count;
@@ -159,6 +163,8 @@ namespace TFContent
 		[ButtonGroup("Load")]
 		internal virtual void OnLoadData()
 		{
+			if(string.IsNullOrWhiteSpace(objectPath) || dataList == null) return;
+
 			int length = dataList.Count;
 
 			for(int i = 0 ; i < length ; i++)
@@ -187,6 +193,16 @@ namespace TFContent
 				}
 			}
 			gameObject.SetActive(true);
+		}
+
+		/// <summary>
+		/// 내부 데이터의 인스턴스가 번호가 아직 생성되지 않은 오브젝트를 참조해서는 안됨.
+		/// </summary>
+		public void OnLoadSolo(string objectPath, List<SaveLoadData> dataList)
+		{
+			OnLoadInstance(objectPath, dataList);
+			OnLoadSubInstance();
+			OnLoadData();
 		}
 	}
 }

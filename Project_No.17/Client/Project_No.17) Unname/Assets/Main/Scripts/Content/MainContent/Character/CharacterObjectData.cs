@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 using BC.Base;
 
@@ -12,21 +13,39 @@ namespace TFContent
 	[CreateAssetMenu(fileName = "CharacterObjectData", menuName = "BC/CharacterObjectData")]
 	public class CharacterObjectData : ScriptableObject
 	{
-		public const string CharacterResourcesPath = "Assets/Main/Resources/Character";
+		public const string CharacterResourcesPath = "Assets/Main/Resources/CharacterObject";
 
 		[System.Serializable]
 		public struct PrefabData
 		{
-			public ResourcesKey<GameObject> prefab;
+			public ResourcesKey<CharacterObject> prefab;
 			public Vector3 position; // 위치 정보
 			public Vector3 rotation; // 회전 정보
 			public Vector3 scale; // 스케일 정보
+			[ValueDropdown("IFFTeamList")]
+			public int IFFTeamID;
 
-			public GameObject Prefab => prefab.LoadAsset();
+			public CharacterObject Prefab => prefab.LoadAsset();
 #if UNITY_EDITOR
 			public void OnValidate()
 			{
 				prefab.OnValidate();
+			}
+			private ValueDropdownList<int> IFFTeamList()
+			{
+				var list = new ValueDropdownList<int>();
+
+				var gameContentLoader = GameObject.FindAnyObjectByType<GameContentLoader>();
+				if(gameContentLoader == null) return list;
+				if(gameContentLoader.iffMatchingInfoData == null) return list;
+
+				var infoList = gameContentLoader.iffMatchingInfoData.IFFMatchingInfo;
+				int max = infoList.Select(i => i.MatchNumber.y).Max();
+				for(int i = 0 ; i < max ; i++)
+				{
+					list.Add(i);
+				}
+				return list;
 			}
 #endif
 		}
@@ -38,7 +57,7 @@ namespace TFContent
 		{
 			PrefabData newPrefabData = new PrefabData
 			{
-				prefab = new ResourcesKey<GameObject>("Assets/Main/Resources/Character"),
+				prefab = new ResourcesKey<CharacterObject>("Assets/Main/Resources/CharacterObject"),
 				position = Vector3.zero,
 				rotation = Vector3.zero,
 				scale = Vector3.one // 기본값 설정
@@ -57,17 +76,5 @@ namespace TFContent
 			}
 		}
 #endif
-
-		[ButtonGroup("SaveLoad")]
-		public string SaveData()
-		{
-			return JsonUtility.ToJson(this, true);
-		}
-		[ButtonGroup("SaveLoad")]
-		public void LoadData(string jsonData)
-		{
-			if(string.IsNullOrWhiteSpace(jsonData)) return;
-			JsonUtility.FromJsonOverwrite(jsonData, this);
-		}
 	}
 }

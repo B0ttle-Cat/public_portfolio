@@ -12,5 +12,5 @@ AssetOrigin:
   productId: 173167
   packageName: Shapes
   packageVersion: 4.5.0
-  assetPath: Assets/Shapes/Shaders/Core/Torus Core.cginc
+  assetPath: Assets/DownloadAssets/Shapes/Shaders/Core/Torus Core.cginc
   uploadId: 705858

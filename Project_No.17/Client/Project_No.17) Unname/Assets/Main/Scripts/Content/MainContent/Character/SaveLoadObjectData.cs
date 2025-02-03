@@ -9,11 +9,11 @@ namespace TFContent
 	{
 		public List<SaveLoadObject.ObjectData> saveLoadObjectDataList = new List<SaveLoadObject.ObjectData>();
 
-		public void Save()
+		public void SaveAllObject()
 		{
 			saveLoadObjectDataList = SaveLoadObject.OnSaveGame();
 		}
-		public void Load()
+		public void LoadAllObject()
 		{
 			SaveLoadObject.OnLoadGame(saveLoadObjectDataList);
 		}

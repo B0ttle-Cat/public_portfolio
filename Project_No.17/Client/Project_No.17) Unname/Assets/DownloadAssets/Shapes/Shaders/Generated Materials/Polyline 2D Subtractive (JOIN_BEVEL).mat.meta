@@ -11,5 +11,6 @@ AssetOrigin:
   productId: 173167
   packageName: Shapes
   packageVersion: 4.5.0
-  assetPath: Assets/Shapes/Shaders/Generated Materials/Polyline 2D Subtractive (JOIN_BEVEL).mat
+  assetPath: Assets/DownloadAssets/Shapes/Shaders/Generated Materials/Polyline 2D
+    Subtractive (JOIN_BEVEL).mat
   uploadId: 705858

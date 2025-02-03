@@ -14,5 +14,5 @@ AssetOrigin:
   productId: 173167
   packageName: Shapes
   packageVersion: 4.5.0
-  assetPath: Assets/Shapes/Scripts/Editor/Utils/ShapesInfo.cs
+  assetPath: Assets/DownloadAssets/Shapes/Scripts/Editor/Utils/ShapesInfo.cs
   uploadId: 705858

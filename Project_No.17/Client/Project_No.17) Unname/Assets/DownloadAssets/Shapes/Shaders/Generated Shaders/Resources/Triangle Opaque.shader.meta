@@ -12,5 +12,6 @@ AssetOrigin:
   productId: 173167
   packageName: Shapes
   packageVersion: 4.5.0
-  assetPath: Assets/Shapes/Shaders/Generated Shaders/Resources/Triangle Opaque.shader
+  assetPath: Assets/DownloadAssets/Shapes/Shaders/Generated Shaders/Resources/Triangle
+    Opaque.shader
   uploadId: 705858

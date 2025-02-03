@@ -38,12 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -94,8 +94,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: cd772680b74b7360c89d3a70ce0c61e1,
-    type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: cd772680b74b7360c89d3a70ce0c61e1, type: 2}
 --- !u!1 &6
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,8 +505,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0000000034417194, y: 0.38268352, z: 0.0000000014256072,
-    w: 0.9238795}
+  m_LocalRotation: {x: -0.0000000034417194, y: 0.38268352, z: 0.0000000014256072, w: 0.9238795}
   m_LocalPosition: {x: -11.767246, y: 8.1907425, z: 19.079859}
   m_LocalScale: {x: 42.52456, y: 1, z: 38.54158}
   m_ConstrainProportionsScale: 0
@@ -1897,6 +1895,9 @@ Light:
   m_ForceVisible: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 10
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
 --- !u!124 &96
 Behaviour:
   m_ObjectHideFlags: 0

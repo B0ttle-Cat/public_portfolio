@@ -52,6 +52,8 @@ namespace Pathfinding.ECS {
 				// When in 2D mode, gravity is always disabled
 				ComponentType.Exclude<OrientationYAxisForward>(),
 
+				ComponentType.Exclude<AgentOffMeshLinkMovementDisabled>(),
+
 				ComponentType.ReadOnly<AgentMovementPlaneSource>(),
 				ComponentType.ReadOnly<SimulateMovement>(),
 				ComponentType.ReadOnly<SimulateMovementFinalize>()
@@ -134,6 +136,7 @@ namespace Pathfinding.ECS {
 			draw.DisposeAfter(gizmosDependency);
 			systemState.Dependency = ScheduleSyncEntitiesToTransforms(ref systemState, systemState.Dependency);
 			systemState.Dependency = JobHandle.CombineDependencies(systemState.Dependency, gizmosDependency);
+			systemState.Dependency = new JobClearTemporaryData().Schedule(systemState.Dependency);
 		}
 
 		void ScheduleApplyGravity (ref SystemState systemState, CommandBuilder draw, float dt) {

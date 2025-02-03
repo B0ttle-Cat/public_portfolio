@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 using Sirenix.OdinInspector;
-using Sirenix.Utilities;
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -32,7 +30,7 @@ namespace BC.ODCC
 		internal bool IsDontDestoryLifeItem { get; set; }
 
 		// 쿼리된 ObjectBehaviour 항목들입니다.
-		internal IEnumerable<ObjectBehaviour> queryItems;
+		internal List<ObjectBehaviour> queryItems;
 
 		// ODCC 루퍼 딕셔너리입니다.
 		internal Dictionary<string, OdccQueryLooper> odccLoopers;
@@ -173,7 +171,7 @@ namespace BC.ODCC
 				{
 					foreach(var item in objectList)
 					{
-						newCollector.AddObject(item);
+						if(!newCollector.HasObject(item)) newCollector.AddObject(item);
 					}
 				}
 
@@ -419,15 +417,20 @@ namespace BC.ODCC
 		/// </summary>
 		/// <param name="item">추가할 ObjectBehaviour 객체</param>
 		/// <param name="passDoubleCheck">중복 확인 여부</param>
+		internal bool HasObject(ObjectBehaviour item)
+		{
+			return queryItems.Contains(item);
+		}
+		/// <summary>
+		/// ObjectBehaviour 객체를 추가하는 메서드입니다.
+		/// </summary>
+		/// <param name="item">추가할 ObjectBehaviour 객체</param>
+		/// <param name="passDoubleCheck">중복 확인 여부</param>
 		internal bool AddObject(ObjectBehaviour item)
 		{
-			if(queryItems.Contains(item)) return true;
-
 			if(IsSatisfiesQuery(item))
 			{
-				var list = queryItems.ToList();
-				list.Add(item);
-				queryItems = list;
+				queryItems.Add(item);
 				changeItemList?.Invoke(item, true);
 
 				foreach(var looper in odccLoopers)
@@ -441,7 +444,7 @@ namespace BC.ODCC
 				}
 #if UNITY_EDITOR
 				onShowQueryItems = new List<ObjectBehaviour>();
-				onShowQueryItems.AddRange(list);
+				onShowQueryItems.AddRange(queryItems);
 #endif
 				return true;
 			}
@@ -454,12 +457,8 @@ namespace BC.ODCC
 		/// <param name="item">제거할 ObjectBehaviour 객체</param>
 		internal bool RemoveObject(ObjectBehaviour item)
 		{
-			if(!queryItems.Contains(item)) return true;
-
-			var list = queryItems.ToList();
-			if(list.Remove(item))
+			if(!IsSatisfiesQuery(item) && queryItems.Remove(item))
 			{
-				queryItems = list;
 				changeItemList?.Invoke(item, false);
 
 				foreach(var looper in odccLoopers)
@@ -473,7 +472,7 @@ namespace BC.ODCC
 				}
 #if UNITY_EDITOR
 				onShowQueryItems = new List<ObjectBehaviour>();
-				onShowQueryItems.AddRange(list);
+				onShowQueryItems.AddRange(queryItems);
 #endif
 				return true;
 			}
@@ -529,11 +528,13 @@ namespace BC.ODCC
 		/// <param name="item">업데이트할 ObjectBehaviour 객체</param>
 		internal void UpdateObjectInQuery(ObjectBehaviour item)
 		{
-			if(AddObject(item))
+			bool hasObject = HasObject(item);
+
+			if(!hasObject && AddObject(item))
 			{
 				// Added
 			}
-			else if(RemoveObject(item))
+			else if(hasObject && RemoveObject(item))
 			{
 				// Removed
 			}
@@ -544,9 +545,9 @@ namespace BC.ODCC
 		/// 쿼리된 ObjectBehaviour 항목들을 반환하는 메서드입니다.
 		/// </summary>
 		/// <returns>쿼리된 ObjectBehaviour 항목들</returns>
-		public IEnumerable<ObjectBehaviour> GetQueryItems()
+		public List<ObjectBehaviour> GetQueryItems(bool newList = false)
 		{
-			return queryItems;
+			return newList ? new List<ObjectBehaviour>(queryItems) : queryItems;
 		}
 
 		/// <summary>
@@ -566,36 +567,5 @@ namespace BC.ODCC
 		{
 			return this;
 		}
-
-		/////////////////////////// Obsolete //////////////////////////
-
-		[Obsolete("CreateLooperEvent 를 사용할 것 - 오래된 이름 규칙", true)]
-		private OdccQueryLooper CreateLooper(string key, bool prevUpdate = true)
-		{
-			return CreateLooperEvent(key, prevUpdate ? 0 : 1);
-		}
-
-		[Obsolete("DeleteLooperEvent 를 사용할 것 - 오래된 이름 규칙", true)]
-		private OdccQueryCollector DeleteLooper(string key)
-		{
-			return DeleteLooperEvent(key);
-		}
-
-		[Obsolete("CreateActionEvent 를 사용할 것 - 오래된 이름 규칙", true)]
-		private OdccQueryLooper CreateCallEvent(string key)
-		{
-			return CreateActionEvent(key);
-		}
-
-		[Obsolete("DeleteActionEvent 를 사용할 것 - 오래된 이름 규칙", true)]
-		private OdccQueryCollector DeleteCallEvent(string key)
-		{
-			return DeleteActionEvent(key);
-		}
-
-		//public OdccQueryCollector CreateLooperEvent(object onUnitTargetCollectorUpdate)
-		//{
-		//	throw new NotImplementedException();
-		//}
 	}
 }

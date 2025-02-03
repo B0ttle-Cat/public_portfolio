@@ -27,7 +27,7 @@ Material:
     m_Floats:
     - _ColorMask: 15
     - _StencilComp: 3
-    - _StencilID: 0
+    - _StencilID: 1
     - _StencilOp: 0
     - _StencilOpPass: 0
     - _StencilReadMask: 255

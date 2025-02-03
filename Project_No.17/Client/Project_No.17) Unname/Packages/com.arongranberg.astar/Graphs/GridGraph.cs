@@ -1151,6 +1151,10 @@ namespace Pathfinding {
 		/// </code>
 		/// </summary>
 		public void SetDimensions (int width, int depth, float nodeSize) {
+			if (width < 1) throw new System.ArgumentOutOfRangeException("width", "width must be at least 1");
+			if (depth < 1) throw new System.ArgumentOutOfRangeException("depth", "depth must be at least 1");
+			if (nodeSize <= 0) throw new System.ArgumentOutOfRangeException("nodeSize", "nodeSize must be greater than 0");
+
 			unclampedSize = new Vector2(width, depth)*nodeSize;
 			this.nodeSize = nodeSize;
 			UpdateTransform();

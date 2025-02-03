@@ -38,12 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 691483306}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -94,8 +94,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: a89d235d3ffca2fd18542d636ad53be7,
-    type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: a89d235d3ffca2fd18542d636ad53be7, type: 2}
 --- !u!1 &89
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,8 +912,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 400000, guid: 7c600eaf3f82d413b82711b6050e8cae,
-        type: 3}
+    - targetCorrespondingSourceObject: {fileID: 400000, guid: 7c600eaf3f82d413b82711b6050e8cae, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1567988584}
     m_AddedComponents: []
@@ -1333,7 +1331,6 @@ MonoBehaviour:
     returnAfterBeingPushedAway: 0
     progressAverage: 0
     lastJobDensityResult: 0
-  centerOffsetCompatibility: 1.49
   repathRateCompatibility: 0.5
   canSearchCompability: 1
   orientation: 0
@@ -1344,7 +1341,6 @@ MonoBehaviour:
     sensitivity: 10
     maximumPeriod: 2
     visualizeSensitivity: 0
-  targetCompatibility: {fileID: 213}
   acceleration: 20
   rotationSpeed: 500
   slowdownTime: 0.3
@@ -1384,8 +1380,7 @@ MonoBehaviour:
     value: -1
 --- !u!4 &1408774413 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: 7c600eaf3f82d413b82711b6050e8cae,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 7c600eaf3f82d413b82711b6050e8cae, type: 3}
   m_PrefabInstance: {fileID: 887973932}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1477813671
@@ -1523,7 +1518,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

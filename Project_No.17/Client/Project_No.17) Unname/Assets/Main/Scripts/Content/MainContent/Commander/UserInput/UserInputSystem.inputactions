@@ -300,15 +300,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "InvertSelect",
-                    "type": "Button",
-                    "id": "52f6f9ae-00a4-4b6b-8c53-6fddd669d39d",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -364,17 +355,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Cancel",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "f54133ac-dfd9-4fc1-99e5-95fba7f73c32",
-                    "path": "<Keyboard>/backquote",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "InvertSelect",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -703,9 +683,27 @@
             "id": "f7e83067-59e8-4f57-8746-3132da85cab4",
             "actions": [
                 {
+                    "name": "MousePos",
+                    "type": "Value",
+                    "id": "69517c24-6fd9-4810-b84d-0f9ec3d82a94",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "OpenActionPalette",
                     "type": "Button",
                     "id": "f205ab51-f7a7-4617-a4df-351a6b7d0ad4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Move",
+                    "type": "Button",
+                    "id": "c1bfe6d0-1751-4df4-886a-c81215bf850e",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -716,11 +714,33 @@
                 {
                     "name": "",
                     "id": "a969c64e-8a81-42e5-bda6-6a0bc8d219d3",
+                    "path": "<Keyboard>/backquote",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OpenActionPalette",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e34723e6-6837-4c8e-b77f-7e58edd6b68c",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "OpenActionPalette",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "865645cc-9bdb-44f2-974c-ac6c96f2420e",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MousePos",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -744,8 +764,8 @@
                 {
                     "name": "",
                     "id": "7f0c07c4-f790-461b-a81e-52231e10a041",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
+                    "path": "<Keyboard>/backquote",
+                    "interactions": "Press(behavior=1)",
                     "processors": "",
                     "groups": "",
                     "action": "ClosePalette",

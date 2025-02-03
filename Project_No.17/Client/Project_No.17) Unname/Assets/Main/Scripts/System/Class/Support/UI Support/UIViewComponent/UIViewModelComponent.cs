@@ -153,8 +153,9 @@ namespace TFSystem.UI
 				}
 			}
 		}
-		protected override void BaseValidate()
+		protected override void BaseValidate(in bool isPrefab = false)
 		{
+			if(isPrefab) return;
 			if(ThisUIShowAndHide == null)
 			{
 				Debug.LogException(new Exception("IUIShowAndHide 컴포넌트가 없습니다. UIViewComponent 에는 최소한 1개의 UIShowAndHide 가 있어야 합니다."));

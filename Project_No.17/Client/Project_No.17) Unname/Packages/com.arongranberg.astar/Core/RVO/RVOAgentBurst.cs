@@ -386,7 +386,7 @@ namespace Pathfinding.RVO {
 			// Write the output starting at this index in the neighbours array
 			var outputIndex = agentIndex * SimulatorBurst.MaxNeighbourCount;
 
-			quadtree.QueryKNearest(new RVOQuadtreeBurst.QuadtreeQuery {
+			int numNeighbours = quadtree.QueryKNearest(new RVOQuadtreeBurst.QuadtreeQuery {
 				position = agentData.position[agentIndex],
 				speed = agentData.maxSpeed[agentIndex],
 				agentRadius = agentData.radius[agentIndex],
@@ -399,8 +399,6 @@ namespace Pathfinding.RVO {
 				resultDistances = neighbourDistances,
 			});
 
-			int numNeighbours = 0;
-			while (numNeighbours < maxNeighbourCount && math.isfinite(neighbourDistances[numNeighbours])) numNeighbours++;
 			output.numNeighbours[agentIndex] = numNeighbours;
 
 			MovementPlaneWrapper movementPlane = default;
@@ -410,6 +408,7 @@ namespace Pathfinding.RVO {
 			// Filter out invalid neighbours
 			for (int i = 0; i < numNeighbours; i++) {
 				int otherIndex = neighbours[outputIndex + i];
+				if (otherIndex == -1) throw new System.Exception("Invalid neighbour index");
 				// Interval along the y axis in which the agents overlap
 				movementPlane.ToPlane(agentData.position[otherIndex], out float otherElevation);
 				float maxY = math.min(localElevation + agentData.height[agentIndex], otherElevation + agentData.height[otherIndex]);
@@ -611,6 +610,8 @@ namespace Pathfinding.RVO {
 				var ourSpeed = output.speed[agentIndex];
 				var ourEndOfPath = agentData.endOfPath[agentIndex];
 				// Ignore if destination is not set
+				// TODO: Will this never trigger due to FloatMode.Fast?
+				// Should be ok anyway, since the distance calculations below will filter it out anyway.
 				if (!math.isfinite(ourEndOfPath.x)) continue;
 
 				var ourPosition = agentData.position[agentIndex];

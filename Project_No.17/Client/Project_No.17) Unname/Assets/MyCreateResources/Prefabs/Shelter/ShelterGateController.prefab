@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 279666582213442231}
   - component: {fileID: 3439678836049646314}
   - component: {fileID: 6043762025589042628}
+  - component: {fileID: 4276870489185182001}
   m_Layer: 6
   m_Name: ShelterGateController
   m_TagString: Untagged
@@ -80,6 +81,18 @@ MonoBehaviour:
     playableDirector: {fileID: 4306054404490627311}
     signalReceiver: {fileID: 6752676519182317543}
     stopSignalAsset: {fileID: 11400000, guid: f03a8c532042404408efe30a734d5d42, type: 2}
+--- !u!114 &4276870489185182001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008607016248627826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17d8b2612aeed684ba18c4bb4067aca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5190952078995049286
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,10 +336,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5811090430609405416, guid: 22d260f1ec8904344a9dbd28728f5e20, type: 3}
+    - {fileID: 2137069855877488359, guid: 22d260f1ec8904344a9dbd28728f5e20, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5845381691686515592, guid: 22d260f1ec8904344a9dbd28728f5e20, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3459535222886192052}
+    - targetCorrespondingSourceObject: {fileID: 7346092718176322243, guid: 22d260f1ec8904344a9dbd28728f5e20, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6785540977826084264}
   m_SourcePrefab: {fileID: 100100000, guid: 22d260f1ec8904344a9dbd28728f5e20, type: 3}
 --- !u!82 &1873387079622459351 stripped
 AudioSource:
@@ -338,11 +359,53 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5082896869901595049, guid: 22d260f1ec8904344a9dbd28728f5e20, type: 3}
   m_PrefabInstance: {fileID: 232024588039568907}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5919601895496404355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5845381691686515592, guid: 22d260f1ec8904344a9dbd28728f5e20, type: 3}
+  m_PrefabInstance: {fileID: 232024588039568907}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3459535222886192052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5919601895496404355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 183748dd497aa473a98ff0cd8cb67fc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1073741824
+  uniqueID: 5324756792008267873
+  updateError: 1
+  checkTime: 0.2
 --- !u!4 &7397167995755117423 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7318442009132139876, guid: 22d260f1ec8904344a9dbd28728f5e20, type: 3}
   m_PrefabInstance: {fileID: 232024588039568907}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7406945042561694920 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7346092718176322243, guid: 22d260f1ec8904344a9dbd28728f5e20, type: 3}
+  m_PrefabInstance: {fileID: 232024588039568907}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6785540977826084264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7406945042561694920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 183748dd497aa473a98ff0cd8cb67fc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1073741824
+  uniqueID: 7669547823291732180
+  updateError: 1
+  checkTime: 0.2
 --- !u!1001 &3465129721745912469
 PrefabInstance:
   m_ObjectHideFlags: 0

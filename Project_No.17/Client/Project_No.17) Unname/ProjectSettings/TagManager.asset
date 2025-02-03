@@ -14,22 +14,22 @@ TagManager:
   - Obstacle
   - 
   - 
-  - SelectingHelper
+  - 
+  - SelectingTarget
+  - AttackingTarget
+  - 
+  - 
+  - 
+  - Projectile
   - 
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - RenderCharacter
+  - RenderProjectile
+  - RenderSelecting
+  - Render
+  - Render
   - 
   - 
   - 

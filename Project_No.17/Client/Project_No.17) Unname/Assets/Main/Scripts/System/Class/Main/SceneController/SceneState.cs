@@ -67,7 +67,7 @@ namespace TFSystem
 			SystemStateInTargetScene = GetSystemStateInTargetScene();
 			AttachSceneState();
 			var subScenes = ThisContainer.GetAllComponent<SubScene>();
-			int length = subScenes.Length;
+			int length = subScenes.Count;
 			for(int i = 0 ; i < length ; i++)
 			{
 				await subScenes[i].OpenScene();
@@ -87,7 +87,7 @@ namespace TFSystem
 
 			DetachSceneState();
 			var subScenes = ThisContainer.GetAllComponent<SubScene>();
-			int length = subScenes.Length;
+			int length = subScenes.Count;
 			for(int i = 0 ; i < length ; i++)
 			{
 				await subScenes[i].CloseScene();

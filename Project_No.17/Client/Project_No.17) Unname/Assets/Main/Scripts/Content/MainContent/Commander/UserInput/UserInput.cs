@@ -1,4 +1,8 @@
-﻿using BC.ODCC;
+﻿using System.Collections.Generic;
+
+using BC.ODCC;
+
+using UnityEngine;
 namespace TFContent
 {
 	public interface IPerInputUpdate : IOdccComponent
@@ -14,50 +18,57 @@ namespace TFContent
 
 		private UserInputSystem inputActions;
 
+		[UnityEngine.SerializeField]
 		private QuerySystem queryPerInputUpdate;
+		[UnityEngine.SerializeField]
 		private OdccQueryCollector collectorPerInputUpdate;
-		private OdccQueryLooper callPerInputEnable;
-		private OdccQueryLooper callPerInputDisable;
 		private OdccQueryLooper callPerInputUpdate;
 		#region ODCCFunction
 		///Awake 대신 사용.
 		protected override void BaseAwake()
 		{
+			Cursor.lockState = CursorLockMode.Confined;
+
+			inputActions ??=  new UserInputSystem();
+			NumberInput = new NumberInput(inputActions.Number);
+
 			queryPerInputUpdate = QuerySystemBuilder.CreateQuery().WithAll<IPerInputUpdate>().Build(ThisScene);
 			collectorPerInputUpdate = OdccQueryCollector.CreateQueryCollector(queryPerInputUpdate, ThisScene)
-				.CreateActionEvent(nameof(callPerInputEnable), out callPerInputEnable)
-					.CallForeach<IPerInputUpdate>(PerInputEnable).GetCollector()
-				.CreateActionEvent(nameof(callPerInputDisable), out callPerInputDisable)
-					.CallForeach<IPerInputUpdate>(PerInputDisable).GetCollector()
-				.CreateActionEvent(nameof(callPerInputUpdate), out callPerInputUpdate)
-					.CallForeach<IPerInputUpdate>(PerInputUpdate).GetCollector();
-		}
-		private void PerInputEnable(OdccQueryLooper.LoopInfo loopInfo, IPerInputUpdate listener)
-		{
-			listener.OnPerInputEnable(inputActions);
+				.CreateChangeListEvent(ChangeIPerInputUpdateList).GetCollector()
+				.CreateActionEvent(nameof(callPerInputUpdate), looper: out callPerInputUpdate)
+				.CallForeach<IPerInputUpdate>(PerInputUpdate).GetCollector();
 		}
 
-		private void PerInputDisable(OdccQueryLooper.LoopInfo loopInfo, IPerInputUpdate listener)
+		private void ChangeIPerInputUpdateList(ObjectBehaviour behaviour, bool added)
 		{
-			listener.OnPerInputDisable(inputActions);
+			if(added)
+			{
+				if(behaviour.ThisContainer.TryGetComponentList<IPerInputUpdate>(out var list))
+				{
+					list.ForEach(item => item.OnPerInputEnable(inputActions));
+				}
+			}
+			else
+			{
+				if(behaviour.ThisContainer.TryGetComponentList<IPerInputUpdate>(out var list))
+				{
+					list.ForEach(item => item.OnPerInputDisable(inputActions));
+				}
+			}
 		}
 
-		private void PerInputUpdate(OdccQueryLooper.LoopInfo loopInfo, IPerInputUpdate listener)
+		private void PerInputUpdate(OdccQueryLooper.LoopInfo loopInfo, List<IPerInputUpdate> listener)
 		{
-			listener.OnPerInputUpdate(inputActions);
+			listener.ForEach(i => i.OnPerInputUpdate(inputActions));
 		}
 
 		///Start 대신 사용.
 		protected override void BaseStart()
 		{
-			inputActions ??=  new UserInputSystem();
+
 			if(inputActions != null)
 			{
 				inputActions.Enable();
-
-				NumberInput = new NumberInput(inputActions.Number);
-
-				callPerInputEnable?.RunAction();
 			}
 		}
 
@@ -66,23 +77,18 @@ namespace TFContent
 		{
 			if(inputActions != null)
 			{
-				callPerInputDisable?.RunAction();
-
 				inputActions.Disable();
 
 				inputActions.Dispose();
 				inputActions = null;
 			}
 
-			if(queryPerInputUpdate != null)
+			if(collectorPerInputUpdate != null)
 			{
-				collectorPerInputUpdate.DeleteActionEvent(nameof(callPerInputEnable));
-				collectorPerInputUpdate.DeleteActionEvent(nameof(callPerInputDisable));
+				collectorPerInputUpdate.DeleteChangeListEvent(ChangeIPerInputUpdateList);
 				collectorPerInputUpdate.DeleteActionEvent(nameof(callPerInputUpdate));
-				callPerInputEnable = null;
-				callPerInputDisable = null;
-				callPerInputUpdate = null;
 				collectorPerInputUpdate = null;
+				callPerInputUpdate = null;
 			}
 
 			if(NumberInput != null)

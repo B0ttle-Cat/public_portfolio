@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
+
+using Sirenix.OdinInspector;
 
 using UnityEngine;
 
@@ -12,6 +14,7 @@ namespace BC.ODCC
 	/// OdccQueryLooper 클래스는 OdccQueryCollector에서 수집된 항목들을 기반으로 루프 작업을 관리합니다.
 	/// 이 클래스는 CallForeach 구조를 사용하여 항목들을 처리하며, 루프 작업을 비동기적으로 실행할 수 있습니다.
 	/// </summary>
+	[Serializable]
 	public sealed partial class OdccQueryLooper : IDisposable
 	{
 		// 관련된 OdccQueryCollector 객체입니다.
@@ -20,7 +23,11 @@ namespace BC.ODCC
 		// 루퍼의 키입니다.
 		internal string looperKey;
 
+		// 루퍼의 RunAwaitable / RunAction 메서드 실행 여부입니다.
+		public bool sleep;
+
 		/// CallForeach 로 만든 액션의 개수만큼 들어있습니다.
+		[ShowInInspector]
 		internal List<RunForeachStruct> runForeachStructList;
 
 		/// <summary>
@@ -29,19 +36,17 @@ namespace BC.ODCC
 		public struct RunForeachStruct
 		{
 			// CallForeach 에서 지정된 델리게이트입니다.
-			public Delegate targetDelegate;
-
-			// CallForeach 에서 Enumerator 를 사용하는지 여부입니다.
-			public bool isEnumerator;
+			internal Delegate targetDelegate;
 
 			// queryCollector 를 만족하는 오브젝트 들 만큼 있는 RunForeachAction 배열입니다.
-			public RunForeachAction[] runForeachActionList;
+			[SerializeField]
+			internal List<RunForeachAction> runForeachActionList;
 
 			// queryCollector 를 만족하는 오브젝트가 새로 추가 되면 Foreach에 맞는 Delegate 로 변경하는 함수입니다.
-			public Func<ObjectBehaviour, RunForeachAction> createAction;
+			internal Func<ObjectBehaviour, RunForeachAction> createAction;
 
 			// 업데이트 프레임을 반환하는 함수입니다.
-			public Func<int> updateFrame;
+			internal Func<int> updateFrame;
 
 			/// <summary>
 			/// RunForeachStruct의 생성자입니다.
@@ -53,8 +58,7 @@ namespace BC.ODCC
 			public RunForeachStruct(Delegate targetDelegate, List<RunForeachAction> runLoopActionList, bool isEnumerator, Func<ObjectBehaviour, RunForeachAction> createAction)
 			{
 				this.targetDelegate = targetDelegate;
-				this.runForeachActionList = runLoopActionList.ToArray();
-				this.isEnumerator = isEnumerator;
+				this.runForeachActionList = runLoopActionList;
 				this.createAction = createAction;
 				updateFrame = null;
 			}
@@ -66,9 +70,8 @@ namespace BC.ODCC
 			public void Add(ObjectBehaviour item)
 			{
 				if(createAction == null) return;
-				var list = runForeachActionList.ToList();
+				var list = runForeachActionList;
 				list.Add(createAction(item));
-				runForeachActionList = list.ToArray();
 			}
 
 			/// <summary>
@@ -77,10 +80,20 @@ namespace BC.ODCC
 			/// <param name="item">제거할 ObjectBehaviour 항목</param>
 			public void Remove(ObjectBehaviour item)
 			{
-				var list = runForeachActionList.ToList();
-				if(list != null && createAction != null && list.Remove(createAction(item)))
+				var list = runForeachActionList;
+				if(list != null && createAction != null)
 				{
-					runForeachActionList = list.ToArray();
+					int length = list.Count;
+					for(int i = 0 ; i < length ; i++)
+					{
+						var action = list[i];
+						if(action.key == item)
+						{
+							list.RemoveAt(i);
+							i--;
+							length--;
+						}
+					}
 				}
 			}
 		}
@@ -88,6 +101,7 @@ namespace BC.ODCC
 		/// <summary>
 		/// RunForeachAction 추상 클래스는 CallForeach 구조에서 실행될 액션을 정의합니다.
 		/// </summary>
+		[Serializable]
 		public abstract class RunForeachAction
 		{
 			// 관련된 ObjectBehaviour 키입니다.
@@ -170,6 +184,7 @@ namespace BC.ODCC
 			OdccQueryLooper looper = new OdccQueryLooper
 			{
 				looperKey = key,
+				sleep = false,
 				queryCollector = queryCollector,
 				loopOrder = loopOrder,
 				runForeachStructList = new List<RunForeachStruct>(),
@@ -197,6 +212,7 @@ namespace BC.ODCC
 			OdccQueryLooper looper = new OdccQueryLooper
 			{
 				looperKey = key,
+				sleep = false,
 				queryCollector = queryCollector,
 				loopOrder = 0,
 				runForeachStructList = new List<RunForeachStruct>(),
@@ -213,6 +229,8 @@ namespace BC.ODCC
 		/// <returns>UnityEngine.Awaitable 객체</returns>
 		public async Awaitable RunAwaitable()
 		{
+			if(sleep) return;
+
 			// 쿼리 콜렉터가 null인 경우 중단합니다.
 			if(queryCollector is null) return;
 
@@ -250,8 +268,8 @@ namespace BC.ODCC
 				// 각 CallForeach 구조체의 실행 시작 시간을 설정합니다.
 				loopingInfo.actionStartTime = Time.timeAsDouble;
 				RunForeachStruct action = runForeachStructList[loopingInfo.actionIndex]; // 현재 실행할 CallForeach 구조체입니다.
-				RunForeachAction[] itemList = action.runForeachActionList; // 현재 CallForeach 구조체의 액션 리스트입니다.
-				int itemTotalCount = itemList.Length; // 액션 리스트의 총 개수를 설정합니다.
+				List<RunForeachAction> itemList = action.runForeachActionList; // 현재 CallForeach 구조체의 액션 리스트입니다.
+				int itemTotalCount = itemList.Count; // 액션 리스트의 총 개수를 설정합니다.
 
 				// 각 CallForeach 액션에 대해 루프를 실행합니다.
 				loopingInfo.itemTotalCount = itemTotalCount;
@@ -452,15 +470,15 @@ namespace BC.ODCC
 		/// <returns>설정된 항목</returns>
 		internal T SetForeachItem<T>(ObjectBehaviour item) where T : class, IOdccItem
 		{
-			if(typeof(T).IsSubclassOf(typeof(ComponentBehaviour)) && item.ThisContainer._TryGetComponent<T>(out T t))
+			if(typeof(T).IsSubclassOf(typeof(IOdccComponent)) && item.ThisContainer._TryGetComponent<T>(out T t))
 			{
 				return t;
 			}
-			else if(typeof(T).IsSubclassOf(typeof(DataObject)) && item.ThisContainer._TryGetData<T>(out T tt))
+			else if(typeof(T).IsSubclassOf(typeof(IDataObject)) && item.ThisContainer._TryGetData<T>(out T tt))
 			{
 				return tt;
 			}
-			else if(typeof(T).IsSubclassOf(typeof(ObjectBehaviour)))
+			else if(typeof(T).IsSubclassOf(typeof(IOdccObject)))
 			{
 				return item as T;
 			}
@@ -477,37 +495,32 @@ namespace BC.ODCC
 				return item.GetComponent<T>();
 			}
 		}
-
-		internal T SetForeachItems<T>(ObjectBehaviour item) where T : class, ICollection<IOdccAttach>, new()
+		internal List<T> SetForeachItems<T>(ObjectBehaviour item) where T : class, IOdccItem
 		{
-			Type elementType = typeof(T).GetGenericArguments()[0];
-			int elementTypeID = OdccManager.GetTypeToIndex(elementType);
-			//
-			if(typeof(T).IsSubclassOf(typeof(ComponentBehaviour)) && item.ThisContainer._TryGetComponents<T>(elementTypeID, out var t))
+			if(typeof(T).IsSubclassOf(typeof(IOdccComponent)) && item.ThisContainer._TryGetComponents<T>(out var t))
 			{
 				return t;
 			}
-			else if(typeof(T).IsSubclassOf(typeof(DataObject)) && item.ThisContainer._TryGetDatas<T>(elementTypeID, out var tt))
+			else if(typeof(T).IsSubclassOf(typeof(IDataObject)) && item.ThisContainer._TryGetDatas<T>(out var tt))
 			{
 				return tt;
 			}
-			////else if(typeof(T).IsSubclassOf(typeof(ObjectBehaviour)))
-			////{
-			////	return item as T;
-			////}
-			////else if(item.ThisContainer._TryGetComponent<T>(out T component))
-			////{
-			////	return component;
-			////}
-			////else if(item.ThisContainer._TryGetData<T>(out T data))
-			////{
-			////	return data;
-			////}
-			//else
-			//{
-			//	return item.GetComponents<T>();
-			//}
-			return null;
+			else if(typeof(T).IsSubclassOf(typeof(IOdccObject)))
+			{
+				return new List<T>(new T[1] { item as T });
+			}
+			else if(item.ThisContainer._TryGetComponents<T>(out var component))
+			{
+				return component;
+			}
+			else if(item.ThisContainer._TryGetDatas<T>(out var data))
+			{
+				return data;
+			}
+			else
+			{
+				return new List<T>(item.gameObject.GetComponents<T>());
+			}
 		}
 
 		/// <summary>

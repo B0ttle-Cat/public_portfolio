@@ -289,6 +289,7 @@ namespace Pathfinding {
 
 				if (start == end) {
 					result.Add(nodes[end]);
+					RemoveBacktracking(result, ostart, result.Count-2);
 					return;
 				}
 
@@ -316,6 +317,7 @@ namespace Pathfinding {
 
 				if (!anySucceded) {
 					result.Add(nodes[start]);
+					RemoveBacktracking(result, ostart, result.Count-2);
 
 					// It is guaranteed that mn = start+1
 					start = mn;
@@ -346,11 +348,28 @@ namespace Pathfinding {
 						result.Add(nodes[start]);
 						start++;
 					} else {
-						//Remove nodes[end]
+						// In some rare cases, doing the raycast simplification may cause it to backtrack so that the path goes:
+						// A -> B -> C -> B -> D
+						// While this is technically allowed, it will cause a weird and suboptimal path. So we should try to avoid it.
+						RemoveBacktracking(result, ostart, resCount);
+
+						// Remove nodes[end], otherwise we will get a duplicate node when the next raycast happens
 						result.RemoveAt(result.Count-1);
 						start = mn;
 					}
 				}
+			}
+		}
+
+		/// <summary>
+		/// Removes backtracking in the path.
+		/// This can happen when the path goes A -> B -> C -> B -> D.
+		/// This method will replace B -> C -> B with just B, when passed aroundIndex=C.
+		/// </summary>
+		static void RemoveBacktracking (List<GraphNode> nodes, int listStartIndex, int aroundIndex) {
+			while (aroundIndex - 1 > listStartIndex && aroundIndex + 1 < nodes.Count && nodes[aroundIndex-1] == nodes[aroundIndex+1]) {
+				nodes.RemoveRange(aroundIndex, 2);
+				aroundIndex--;
 			}
 		}
 
