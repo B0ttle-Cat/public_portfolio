@@ -1,0 +1,251 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d26bc5d235055249a4f58869e7a3636, type: 3}
+  m_Name: CharacterObjectData
+  m_EditorClassIdentifier: 
+  UnusedInEditor: 000000
+  prefabDatas:
+  - prefab:
+      resourcesPath: CharacterObject/TestCharacter/Character_00
+    position: {x: 24, y: 0, z: 80}
+    rotation: {x: -0, y: 90, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+  - prefab:
+      resourcesPath: CharacterObject/TestCharacter/Character_01
+    position: {x: 22, y: 0, z: 82}
+    rotation: {x: -0, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+  - prefab:
+      resourcesPath: CharacterObject/TestCharacter/Character_03
+    position: {x: 30.83, y: 0, z: 76.45}
+    rotation: {x: -0, y: 80.11581, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+  iffDatas:
+  - IFFTeamID: 0
+  - IFFTeamID: 1
+  - IFFTeamID: 2
+  abilityDatas:
+  - abilityValueList:
+    - abilityType: 0
+      abilityValue: 0
+    - abilityType: 1
+      abilityValue: 500000
+    - abilityType: 2
+      abilityValue: 100
+    - abilityType: 3
+      abilityValue: 100
+    - abilityType: 4
+      abilityValue: 10
+    - abilityType: 10
+      abilityValue: 0
+    - abilityType: 11
+      abilityValue: 100
+    - abilityType: 12
+      abilityValue: 100
+    - abilityType: 13
+      abilityValue: 100
+    - abilityType: 14
+      abilityValue: 10
+    - abilityType: 20
+      abilityValue: 0
+    - abilityType: 21
+      abilityValue: 10
+    - abilityType: 22
+      abilityValue: 10
+    - abilityType: 30
+      abilityValue: 0
+    - abilityType: 31
+      abilityValue: 10
+    - abilityType: 32
+      abilityValue: 10
+    - abilityType: 50
+      abilityValue: 0
+    - abilityType: 51
+      abilityValue: 10
+    - abilityType: 52
+      abilityValue: 10
+    - abilityType: 53
+      abilityValue: 10
+    - abilityType: 54
+      abilityValue: 10
+    - abilityType: 55
+      abilityValue: 10
+    - abilityType: 56
+      abilityValue: 10
+    - abilityType: 100
+      abilityValue: 0
+    - abilityType: 101
+      abilityValue: 50
+    - abilityType: 102
+      abilityValue: 10
+    - abilityType: 103
+      abilityValue: 10
+    - abilityType: 104
+      abilityValue: 10
+    - abilityType: 105
+      abilityValue: 10
+    - abilityType: 106
+      abilityValue: 10
+    - abilityType: 200
+      abilityValue: 0
+    - abilityType: 201
+      abilityValue: 15
+    - abilityType: 204
+      abilityValue: 2
+  - abilityValueList:
+    - abilityType: 0
+      abilityValue: 0
+    - abilityType: 1
+      abilityValue: 500000
+    - abilityType: 2
+      abilityValue: 100
+    - abilityType: 3
+      abilityValue: 100
+    - abilityType: 4
+      abilityValue: 10
+    - abilityType: 10
+      abilityValue: 0
+    - abilityType: 11
+      abilityValue: 100
+    - abilityType: 12
+      abilityValue: 100
+    - abilityType: 13
+      abilityValue: 100
+    - abilityType: 14
+      abilityValue: 10
+    - abilityType: 20
+      abilityValue: 0
+    - abilityType: 21
+      abilityValue: 10
+    - abilityType: 22
+      abilityValue: 10
+    - abilityType: 30
+      abilityValue: 0
+    - abilityType: 31
+      abilityValue: 10
+    - abilityType: 32
+      abilityValue: 10
+    - abilityType: 50
+      abilityValue: 0
+    - abilityType: 51
+      abilityValue: 10
+    - abilityType: 52
+      abilityValue: 10
+    - abilityType: 53
+      abilityValue: 10
+    - abilityType: 54
+      abilityValue: 10
+    - abilityType: 55
+      abilityValue: 10
+    - abilityType: 56
+      abilityValue: 10
+    - abilityType: 100
+      abilityValue: 0
+    - abilityType: 101
+      abilityValue: 50
+    - abilityType: 102
+      abilityValue: 10
+    - abilityType: 103
+      abilityValue: 10
+    - abilityType: 104
+      abilityValue: 10
+    - abilityType: 105
+      abilityValue: 10
+    - abilityType: 106
+      abilityValue: 10
+    - abilityType: 200
+      abilityValue: 0
+    - abilityType: 201
+      abilityValue: 0
+    - abilityType: 202
+      abilityValue: 0
+    - abilityType: 203
+      abilityValue: 0
+    - abilityType: 204
+      abilityValue: 0
+    - abilityType: 205
+      abilityValue: 0
+    - abilityType: 206
+      abilityValue: 0
+    - abilityType: 207
+      abilityValue: 0
+    - abilityType: 208
+      abilityValue: 0
+    - abilityType: 209
+      abilityValue: 0
+  - abilityValueList:
+    - abilityType: 0
+      abilityValue: 0
+    - abilityType: 1
+      abilityValue: 500000
+    - abilityType: 2
+      abilityValue: 100
+    - abilityType: 3
+      abilityValue: 100
+    - abilityType: 4
+      abilityValue: 10
+    - abilityType: 10
+      abilityValue: 0
+    - abilityType: 11
+      abilityValue: 100
+    - abilityType: 12
+      abilityValue: 100
+    - abilityType: 13
+      abilityValue: 100
+    - abilityType: 14
+      abilityValue: 10
+    - abilityType: 20
+      abilityValue: 0
+    - abilityType: 21
+      abilityValue: 10
+    - abilityType: 22
+      abilityValue: 10
+    - abilityType: 30
+      abilityValue: 0
+    - abilityType: 31
+      abilityValue: 10
+    - abilityType: 32
+      abilityValue: 10
+    - abilityType: 50
+      abilityValue: 0
+    - abilityType: 51
+      abilityValue: 10
+    - abilityType: 52
+      abilityValue: 10
+    - abilityType: 53
+      abilityValue: 10
+    - abilityType: 54
+      abilityValue: 10
+    - abilityType: 55
+      abilityValue: 10
+    - abilityType: 56
+      abilityValue: 10
+    - abilityType: 100
+      abilityValue: 0
+    - abilityType: 101
+      abilityValue: 50
+    - abilityType: 102
+      abilityValue: 10
+    - abilityType: 103
+      abilityValue: 10
+    - abilityType: 104
+      abilityValue: 10
+    - abilityType: 105
+      abilityValue: 10
+    - abilityType: 106
+      abilityValue: 10
+    - abilityType: 200
+      abilityValue: 0
+    - abilityType: 201
+      abilityValue: 10
+    - abilityType: 204
+      abilityValue: 5
