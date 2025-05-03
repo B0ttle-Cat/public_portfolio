@@ -1,0 +1,220 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d26bc5d235055249a4f58869e7a3636, type: 3}
+  m_Name: CharacterObjectData
+  m_EditorClassIdentifier: 
+  prefabDatas:
+  - prefab:
+      resourcesPath: CharacterObject/TestCharacter/Character_00
+  - prefab:
+      resourcesPath: CharacterObject/TestCharacter/Character_01
+  - prefab:
+      resourcesPath: CharacterObject/TestCharacter/Character_03
+  instanceDatas:
+  - unused: 0
+    prefabIndex: 0
+    position: {x: 40, y: 0, z: 40}
+    rotation: {x: 0, y: 90, z: 0}
+    iffTeamID: 0
+    iffUnitID: 0
+    abilityStruct:
+      abilityValueList:
+      - abilityType: 0
+        abilityValue: 0
+      - abilityType: 1
+        abilityValue: 1000
+      - abilityType: 2
+        abilityValue: 100
+      - abilityType: 3
+        abilityValue: 100
+      - abilityType: 4
+        abilityValue: 100
+      - abilityType: 10
+        abilityValue: 0
+      - abilityType: 11
+        abilityValue: 100
+      - abilityType: 12
+        abilityValue: 100
+      - abilityType: 13
+        abilityValue: 100
+      - abilityType: 14
+        abilityValue: 100
+      - abilityType: 20
+        abilityValue: 0
+      - abilityType: 21
+        abilityValue: 100
+      - abilityType: 22
+        abilityValue: 100
+      - abilityType: 30
+        abilityValue: 0
+      - abilityType: 31
+        abilityValue: 100
+      - abilityType: 32
+        abilityValue: 100
+      - abilityType: 50
+        abilityValue: 0
+      - abilityType: 51
+        abilityValue: 10
+      - abilityType: 52
+        abilityValue: 10
+      - abilityType: 53
+        abilityValue: 10
+      - abilityType: 54
+        abilityValue: 10
+      - abilityType: 100
+        abilityValue: 0
+      - abilityType: 101
+        abilityValue: 10
+      - abilityType: 102
+        abilityValue: 10
+      - abilityType: 103
+        abilityValue: 10
+      - abilityType: 104
+        abilityValue: 10
+      - abilityType: 200
+        abilityValue: 0
+      - abilityType: 201
+        abilityValue: 15
+      - abilityType: 204
+        abilityValue: 1
+  - unused: 0
+    prefabIndex: 1
+    position: {x: 40, y: 0, z: 45}
+    rotation: {x: 0, y: -180, z: 0}
+    iffTeamID: 1
+    iffUnitID: 1
+    abilityStruct:
+      abilityValueList:
+      - abilityType: 0
+        abilityValue: 0
+      - abilityType: 1
+        abilityValue: 1000
+      - abilityType: 2
+        abilityValue: 100
+      - abilityType: 3
+        abilityValue: 100
+      - abilityType: 4
+        abilityValue: 100
+      - abilityType: 10
+        abilityValue: 0
+      - abilityType: 11
+        abilityValue: 100
+      - abilityType: 12
+        abilityValue: 100
+      - abilityType: 13
+        abilityValue: 100
+      - abilityType: 14
+        abilityValue: 100
+      - abilityType: 20
+        abilityValue: 0
+      - abilityType: 21
+        abilityValue: 100
+      - abilityType: 22
+        abilityValue: 100
+      - abilityType: 30
+        abilityValue: 0
+      - abilityType: 31
+        abilityValue: 100
+      - abilityType: 32
+        abilityValue: 100
+      - abilityType: 50
+        abilityValue: 0
+      - abilityType: 51
+        abilityValue: 10
+      - abilityType: 52
+        abilityValue: 10
+      - abilityType: 53
+        abilityValue: 10
+      - abilityType: 54
+        abilityValue: 10
+      - abilityType: 100
+        abilityValue: 0
+      - abilityType: 101
+        abilityValue: 10
+      - abilityType: 102
+        abilityValue: 10
+      - abilityType: 103
+        abilityValue: 10
+      - abilityType: 104
+        abilityValue: 10
+      - abilityType: 200
+        abilityValue: 0
+      - abilityType: 201
+        abilityValue: 0
+      - abilityType: 204
+        abilityValue: 0
+  - unused: 0
+    prefabIndex: 2
+    position: {x: 45, y: 0, z: 40}
+    rotation: {x: 0, y: -45, z: 0}
+    iffTeamID: 2
+    iffUnitID: 2
+    abilityStruct:
+      abilityValueList:
+      - abilityType: 0
+        abilityValue: 0
+      - abilityType: 1
+        abilityValue: 1000
+      - abilityType: 2
+        abilityValue: 100
+      - abilityType: 3
+        abilityValue: 100
+      - abilityType: 4
+        abilityValue: 100
+      - abilityType: 10
+        abilityValue: 0
+      - abilityType: 11
+        abilityValue: 100
+      - abilityType: 12
+        abilityValue: 100
+      - abilityType: 13
+        abilityValue: 100
+      - abilityType: 14
+        abilityValue: 100
+      - abilityType: 20
+        abilityValue: 0
+      - abilityType: 21
+        abilityValue: 100
+      - abilityType: 22
+        abilityValue: 100
+      - abilityType: 30
+        abilityValue: 0
+      - abilityType: 31
+        abilityValue: 100
+      - abilityType: 32
+        abilityValue: 100
+      - abilityType: 50
+        abilityValue: 0
+      - abilityType: 51
+        abilityValue: 10
+      - abilityType: 52
+        abilityValue: 10
+      - abilityType: 53
+        abilityValue: 10
+      - abilityType: 54
+        abilityValue: 10
+      - abilityType: 100
+        abilityValue: 0
+      - abilityType: 101
+        abilityValue: 10
+      - abilityType: 102
+        abilityValue: 10
+      - abilityType: 103
+        abilityValue: 10
+      - abilityType: 104
+        abilityValue: 10
+      - abilityType: 200
+        abilityValue: 0
+      - abilityType: 201
+        abilityValue: 13
+      - abilityType: 204
+        abilityValue: 3

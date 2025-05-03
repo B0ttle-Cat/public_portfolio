@@ -1,0 +1,266 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!91 &-8825084381963613140
+AnimatorController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Character_03_Actuator_00_Animator
+  serializedVersion: 5
+  m_AnimatorParameters: []
+  m_AnimatorLayers: []
+--- !u!114 &-7935623360966917404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9040d11e36f30ca43ba6f5a6c5ad5a73, type: 3}
+  m_Name: ActuatorPriority
+  m_EditorClassIdentifier: 
+  priorityOrderByList:
+  - rid: 4169145137812996108
+  - rid: 4169145137812996109
+  FormulaSystem:
+    formulas:
+    - rid: 4169145137812996110
+    - rid: 5965889880189567348
+    - rid: 4169145137812996111
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 4169145137812996108
+      type: {class: ActuatorPriorityOrder/PriorityOrderByDistance, ns: BC.AIProvider, asm: BC.AIProvider}
+      data:
+        reverseOrder: 0
+        normalizeScale: 1
+    - rid: 4169145137812996109
+      type: {class: ActuatorPriorityOrder/PriorityOrderByAbility, ns: BC.AIProvider, asm: BC.AIProvider}
+      data:
+        reverseOrder: 0
+        normalizeScale: 0
+        TargetAbility: 1
+    - rid: 4169145137812996110
+      type: {class: ActuatorPriorityOrder/ActuatorPriorityFormulaIndex, ns: BC.AIProvider, asm: BC.AIProvider}
+      data:
+        priorityOrderByIndex: 0
+    - rid: 4169145137812996111
+      type: {class: ActuatorPriorityOrder/ActuatorPriorityFormulaIndex, ns: BC.AIProvider, asm: BC.AIProvider}
+      data:
+        priorityOrderByIndex: 1
+    - rid: 5965889880189567348
+      type: {class: FormulaEvaluator/FormulaOperator, ns: BC.OdccBase, asm: BC.OdccBase}
+      data:
+        Operator: 1
+--- !u!114 &-6269887422029049084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69af63d73ffea714fa98dab0ab305d97, type: 3}
+  m_Name: ActuatorHitShape
+  m_EditorClassIdentifier: 
+  showScriptablePreview: 1
+  previewScriptableShowOption:
+    showRange: 1
+    showMinMaxRange: 1
+    showShape: 1
+    showTarget: 1
+  pivotPosition: {x: -10, y: 0, z: 0}
+  targetPosition: {x: -10, y: 0, z: 10}
+  testPivotRadius: 0
+  showPlayModeRangePreview: 1
+  previewPlayModeShowOption:
+    showRange: 1
+    showMinMaxRange: 1
+    showShape: 0
+    showTarget: 0
+  targetingMinRange: 3
+  targetingRange: {x: 4, y: 10}
+  targetingMaxRange: 12
+  minRangeColor: {r: 1, g: 1, b: 0, a: 1}
+  rangeColor: {r: 0, g: 0, b: 1, a: 1}
+  maxRangeColor: {r: 1, g: 0, b: 0, a: 1}
+  rangeThickness: 0.08
+  shapes:
+  - isShow: 1
+    isHit: 1
+    shape:
+      rid: 5965890254190674209
+  references:
+    version: 2
+    RefIds:
+    - rid: 5965890254190674209
+      type: {class: CircleShape, ns: BC.Shape, asm: BC.Shape}
+      data:
+        anchorType: 0
+        rangeType: 1
+        Center: {x: 0, y: 0, z: 0}
+        Radius: {x: 0, y: 0}
+        startAngle: -30
+        endedAngle: 30
+        drawStyle: 3
+        color: {r: 0, g: 0, b: 1, a: 0.2}
+        subColor: {r: 0, g: 0, b: 1, a: 1}
+        thickness: 0.1
+        dashStyle:
+          type: 0
+          space: -1
+          snap: 1
+          size: 4
+          spacing: 4
+          offset: 0
+          shapeModifier: 0
+--- !u!114 &-1509826281541989841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9c405f5736e0704c85f16de103691b4, type: 3}
+  m_Name: ActuatorPlayAnimator
+  m_EditorClassIdentifier: 
+  playAnimatorController: {fileID: -8825084381963613140}
+  enterBlandTime: 0
+  exitBlandTime: 0
+  initParameters: []
+  orderEnterParameters: []
+  orderExitParameters: []
+--- !u!114 &-655889753973121529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d7fe71a66018364bba76887e9ae0b02, type: 3}
+  m_Name: ActuatorTarget
+  m_EditorClassIdentifier: 
+  isNonTarget: 1
+  targetType: 1
+  hitTargetLayerMask:
+    serializedVersion: 2
+    m_Bits: 2048
+  FormulaSystem:
+    formulas:
+    - rid: 4169145137812996117
+    - rid: 4169145137812996125
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 4169145137812996117
+      type: {class: ActuatorFormulaAbility, ns: BC.AIProvider, asm: BC.AIProvider}
+      data:
+        getter: 1
+        ability: 1
+        option: 0
+        scale: 1
+        min: 0
+        max: 0
+        curve:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+    - rid: 4169145137812996125
+      type: {class: FormulaEvaluator/FormulaConditionSelf, ns: BC.OdccBase, asm: BC.OdccBase}
+      data:
+        conditionOperator: 2
+        C:
+          rid: 4169145137812996127
+        True:
+          rid: 4169145137812996132
+        False:
+          rid: 4169145137812996133
+    - rid: 4169145137812996127
+      type: {class: FormulaEvaluator/FormulaValue, ns: BC.OdccBase, asm: BC.OdccBase}
+      data:
+        value: 0
+    - rid: 4169145137812996132
+      type: {class: FormulaEvaluator/FormulaValue_Bool, ns: BC.OdccBase, asm: BC.OdccBase}
+      data:
+        value: 1
+    - rid: 4169145137812996133
+      type: {class: FormulaEvaluator/FormulaValue_Bool, ns: BC.OdccBase, asm: BC.OdccBase}
+      data:
+        value: 0
+--- !u!114 &-119966802083497479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9520a7aa20a7874dbc93d4a75878d14, type: 3}
+  m_Name: ActuatorEffect
+  m_EditorClassIdentifier: 
+  abilityEffectFormulaItemList: []
+  references:
+    version: 2
+    RefIds: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f55aaecd60ca4479fe205741988e16, type: 3}
+  m_Name: Character_03_Actuator_00
+  m_EditorClassIdentifier: 
+  TestOrder:
+    abilitys: []
+  TestTarget:
+    abilitys: []
+  basic: {fileID: 6245954959135424595}
+  hitShape: {fileID: -6269887422029049084}
+  priority: {fileID: -7935623360966917404}
+  target: {fileID: -655889753973121529}
+  animator: {fileID: -1509826281541989841}
+  formulas:
+  - {fileID: 11400000, guid: 286d34d4fe3814a4284a9ee4e1f4ab98, type: 2}
+  - {fileID: 11400000, guid: ae3ea15fe43a9b14299d4273585427c6, type: 2}
+  effectObjects: []
+  references:
+    version: 2
+    RefIds: []
+--- !u!114 &6245954959135424595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e48ea79524ce9364d952b1c7ad48a584, type: 3}
+  m_Name: ActuatorBasic
+  m_EditorClassIdentifier: 
+  isActive: 1
+  shieldCost: 0
+  materialCost: 0
+  batteryCost: 0
+  ammoCost: 0
+  UserUnitAI_CanUseAuto: 1

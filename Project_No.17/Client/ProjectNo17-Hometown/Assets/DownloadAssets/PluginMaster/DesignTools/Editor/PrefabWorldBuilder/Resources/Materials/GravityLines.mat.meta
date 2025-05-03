@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e667f52ba5ca47e4696c71def20ed12f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 185406
+  packageName: Prefab World Builder
+  packageVersion: 4.5.1
+  assetPath: Assets/PluginMaster/DesignTools/Editor/PrefabWorldBuilder/Resources/Materials/GravityLines.mat
+  uploadId: 723190

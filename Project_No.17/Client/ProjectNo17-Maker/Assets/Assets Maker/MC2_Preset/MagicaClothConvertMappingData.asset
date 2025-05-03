@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b82ad7252541d56408d60f29c1ab5892, type: 3}
+  m_Name: MagicaClothConvertMappingData
+  m_EditorClassIdentifier: 
+  boneMappingDatas:
+  - vrmName: Bust
+    mc2Name: Breast
+    mc2BoneType: 10
+    mc2PresetPath: Packages/com.b0ttlecat.thirdparty/MagicaCloth2/Res/Preset/MC2_Preset_HardSpring.json
+  - vrmName: CatEar
+    mc2Name: CatEar
+    mc2BoneType: 10
+    mc2PresetPath: Packages/com.b0ttlecat.thirdparty/MagicaCloth2/Res/Preset/MC2_Preset_HardSpring.json
+  - vrmName: FoxTail
+    mc2Name: FoxTail
+    mc2BoneType: 1
+    mc2PresetPath: Packages/com.b0ttlecat.thirdparty/MagicaCloth2/Res/Preset/MC2_Preset_Tail.json
+  - vrmName: Skirt
+    mc2Name: Skirt
+    mc2BoneType: 1
+    mc2PresetPath: Packages/com.b0ttlecat.thirdparty/MagicaCloth2/Res/Preset/MC2_Preset_Skirt.json
+  - vrmName: Sleeve
+    mc2Name: Sleeve
+    mc2BoneType: 1
+    mc2PresetPath: Packages/com.b0ttlecat.thirdparty/MagicaCloth2/Res/Preset/MC2_Preset_SoftSkirt.json
+  - vrmName: Hair
+    mc2Name: FrontHair
+    mc2BoneType: 1
+    mc2PresetPath: Packages/com.b0ttlecat.thirdparty/MagicaCloth2/Res/Preset/MC2_Preset_FrontHair.json
+  - vrmName: Hair
+    mc2Name: ShortHair
+    mc2BoneType: 1
+    mc2PresetPath: Packages/com.b0ttlecat.thirdparty/MagicaCloth2/Res/Preset/MC2_Preset_ShortHair.json
+  - vrmName: Hair
+    mc2Name: LongHair
+    mc2BoneType: 1
+    mc2PresetPath: Packages/com.b0ttlecat.thirdparty/MagicaCloth2/Res/Preset/MC2_Preset_LongHair.json
+  - vrmName: Hair
+    mc2Name: VeryLongHair
+    mc2BoneType: 1
+    mc2PresetPath: Packages/com.b0ttlecat.thirdparty/MagicaCloth2/Res/Preset/MC2_Preset_LongHair.json
+  colliderMappingDatas:
+  - vrmName: 
+    colliderType: 1
+    capsuleDirection: 0
+  - vrmName: 
+    colliderType: 0
+    capsuleDirection: 0
+  - vrmName: 
+    colliderType: 0
+    capsuleDirection: 0

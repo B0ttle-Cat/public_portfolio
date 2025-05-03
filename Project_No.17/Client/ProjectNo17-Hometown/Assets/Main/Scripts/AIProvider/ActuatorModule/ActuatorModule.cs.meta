@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: e8f55aaecd60ca4479fe205741988e16
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - castingClip: {instanceID: 0}
+  - actionClip: {instanceID: 0}
+  - cooldownClip: {instanceID: 0}
+  - originalCastingClip: {fileID: 7400000, guid: 9ecfe09ee85f9af49b61071eb700235e, type: 2}
+  - originalActionClip: {fileID: 7400000, guid: 36589e44281afe84f9e49be9950d6727, type: 2}
+  - originalCooldownClip: {fileID: 7400000, guid: 66350988685befd4699584d92c15a86b, type: 2}
+  - Effect: {instanceID: 0}
+  - HitShape: {instanceID: 0}
+  - Priority: {instanceID: 0}
+  - Retarget: {instanceID: 0}
+  - Player: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

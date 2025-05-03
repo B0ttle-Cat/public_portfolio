@@ -1,0 +1,295 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9520a7aa20a7874dbc93d4a75878d14, type: 3}
+  m_Name: ActuatorEffectFormula_Chance
+  m_EditorClassIdentifier: 
+  parent: {fileID: 0}
+  actuatorFormulaItemList:
+  - EffectType: 1
+    FormulaSystem:
+      formulas:
+      - rid: 5765312856128749773
+  - EffectType: 2
+    FormulaSystem:
+      formulas:
+      - rid: 5765312856128749774
+  - EffectType: 3
+    FormulaSystem:
+      formulas:
+      - rid: 5765312856128749775
+  references:
+    version: 2
+    RefIds:
+    - rid: 5765312856128749773
+      type: {class: FormulaConditionAB, ns: BC.FormulaItem.Branch, asm: BC.OdccBase}
+      data:
+        A:
+          rid: 5765312856128749778
+        B:
+          rid: 5765312856128749779
+        comparisonOperator: 4
+        True:
+          rid: 5765312856128749780
+        False:
+          rid: 5765312856128749781
+    - rid: 5765312856128749774
+      type: {class: FormulaConditionAB, ns: BC.FormulaItem.Branch, asm: BC.OdccBase}
+      data:
+        A:
+          rid: 5765312856128749782
+        B:
+          rid: 5765312856128749783
+        comparisonOperator: 4
+        True:
+          rid: 5765312856128749784
+        False:
+          rid: 5765312856128749785
+    - rid: 5765312856128749775
+      type: {class: FormulaConditionAB, ns: BC.FormulaItem.Branch, asm: BC.OdccBase}
+      data:
+        A:
+          rid: 5765312856128749786
+        B:
+          rid: 5765312856128749787
+        comparisonOperator: 4
+        True:
+          rid: 5765312856128749788
+        False:
+          rid: 5765312856128749789
+    - rid: 5765312856128749778
+      type: {class: ActuatorFormulaAbility, ns: BC.FormulaExternalGroup.ActuatorEffector, asm: BC.AIProvider}
+      data:
+        getter: 0
+        ability: 101
+        option: 3
+        scale: 1
+        min: 0
+        max: 1
+        offset: 0
+        curve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 1
+            outSlope: 1
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 1
+            outSlope: 1
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+    - rid: 5765312856128749779
+      type: {class: ActuatorFormulaAbility, ns: BC.FormulaExternalGroup.ActuatorEffector, asm: BC.AIProvider}
+      data:
+        getter: 1
+        ability: 102
+        option: 3
+        scale: 1
+        min: 0
+        max: 1
+        offset: 0
+        curve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 1
+            outSlope: 1
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 1
+            outSlope: 1
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+    - rid: 5765312856128749780
+      type: {class: FormulaValue_Bool, ns: BC.FormulaItem.Value, asm: BC.OdccBase}
+      data:
+        value: 1
+    - rid: 5765312856128749781
+      type: {class: FormulaValue_Bool, ns: BC.FormulaItem.Value, asm: BC.OdccBase}
+      data:
+        value: 0
+    - rid: 5765312856128749782
+      type: {class: ActuatorFormulaAbility, ns: BC.FormulaExternalGroup.ActuatorEffector, asm: BC.AIProvider}
+      data:
+        getter: 0
+        ability: 103
+        option: 3
+        scale: 1
+        min: 0
+        max: 1
+        offset: 0
+        curve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 1
+            outSlope: 1
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 1
+            outSlope: 1
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+    - rid: 5765312856128749783
+      type: {class: ActuatorFormulaAbility, ns: BC.FormulaExternalGroup.ActuatorEffector, asm: BC.AIProvider}
+      data:
+        getter: 1
+        ability: 104
+        option: 3
+        scale: 1
+        min: 0
+        max: 1
+        offset: 0
+        curve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 1
+            outSlope: 1
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 1
+            outSlope: 1
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+    - rid: 5765312856128749784
+      type: {class: FormulaValue_Bool, ns: BC.FormulaItem.Value, asm: BC.OdccBase}
+      data:
+        value: 1
+    - rid: 5765312856128749785
+      type: {class: FormulaValue_Bool, ns: BC.FormulaItem.Value, asm: BC.OdccBase}
+      data:
+        value: 0
+    - rid: 5765312856128749786
+      type: {class: ActuatorFormulaAbility, ns: BC.FormulaExternalGroup.ActuatorEffector, asm: BC.AIProvider}
+      data:
+        getter: 0
+        ability: 105
+        option: 3
+        scale: 1
+        min: 0
+        max: 1
+        offset: 0
+        curve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 1
+            outSlope: 1
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 1
+            outSlope: 1
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+    - rid: 5765312856128749787
+      type: {class: ActuatorFormulaAbility, ns: BC.FormulaExternalGroup.ActuatorEffector, asm: BC.AIProvider}
+      data:
+        getter: 1
+        ability: 106
+        option: 3
+        scale: 1
+        min: 0
+        max: 1
+        offset: 0
+        curve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 1
+            outSlope: 1
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 1
+            outSlope: 1
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+    - rid: 5765312856128749788
+      type: {class: FormulaValue_Bool, ns: BC.FormulaItem.Value, asm: BC.OdccBase}
+      data:
+        value: 1
+    - rid: 5765312856128749789
+      type: {class: FormulaValue_Bool, ns: BC.FormulaItem.Value, asm: BC.OdccBase}
+      data:
+        value: 0

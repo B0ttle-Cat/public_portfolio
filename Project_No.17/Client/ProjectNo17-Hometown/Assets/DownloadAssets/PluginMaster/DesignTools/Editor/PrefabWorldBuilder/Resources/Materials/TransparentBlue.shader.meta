@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 9b19a2b06fbb1ba4babbd0cb633b200b
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 185406
+  packageName: Prefab World Builder
+  packageVersion: 4.5.1
+  assetPath: Assets/PluginMaster/DesignTools/Editor/PrefabWorldBuilder/Resources/Materials/TransparentBlue.shader
+  uploadId: 723190

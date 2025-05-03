@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9189f7d76b9c44c49b80da194c1b7298, type: 3}
+  m_Name: ScenarioStorage
+  m_EditorClassIdentifier: 
+  episodeDatas:
+  - episodeName: Ep_00
+    episodeDescription: 
+    episodeObjectData:
+    - {fileID: 11400000, guid: b166d7b0379d65a4e9b7ccc1e52b0373, type: 2}
+    - {fileID: 11400000, guid: c36651b80b5d727409d8b34c7eac2bf0, type: 2}
+    - {fileID: 11400000, guid: c78612a03efabfc46b251d0ddbbd8a38, type: 2}
+    - {fileID: 11400000, guid: bc54a06effc924749866174a619c2c25, type: 2}
+  - episodeName: Ep_01
+    episodeDescription: 
+    episodeObjectData:
+    - {fileID: 11400000, guid: eb6c1951e35c8d94ba297217f9e78a2a, type: 2}
+    - {fileID: 11400000, guid: 4d17b6e790d832b4cb31654d1dfc77b8, type: 2}
+    - {fileID: 11400000, guid: dbe2ce96ce7e8ab4c956dfcab8ef36db, type: 2}
+    - {fileID: 11400000, guid: 54a58de3ab7d35144b7cf20b30177de2, type: 2}
+  - episodeName: Ep_02
+    episodeDescription: 
+    episodeObjectData:
+    - {fileID: 11400000, guid: a7391e6c983eb5846a51d509eb462f31, type: 2}
+    - {fileID: 11400000, guid: a786a4414dbecf6459beda1a2905f916, type: 2}
+    - {fileID: 11400000, guid: 6946d1482e066b142a42cbc869f614f3, type: 2}
+    - {fileID: 11400000, guid: f302afdfaff293741b7cfd1d0533bc9a, type: 2}
+  - episodeName: Ep_9999
+    episodeDescription: "\uBE48 \uC5D0\uD53C\uC18C\uB4DC"
+    episodeObjectData:
+    - {fileID: 11400000, guid: 772eef5c319f95a45b6775e7789aaf6e, type: 2}
+    - {fileID: 11400000, guid: dd6dec99c526de14196f1032db83fa43, type: 2}
+    - {fileID: 11400000, guid: b132ee48d3feab346b6e6ae84632644d, type: 2}
+    - {fileID: 11400000, guid: 7cc6108524732f84e8d1fd7e6fc2e55b, type: 2}

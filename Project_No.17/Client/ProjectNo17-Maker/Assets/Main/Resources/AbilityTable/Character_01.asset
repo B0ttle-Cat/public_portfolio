@@ -1,0 +1,2367 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4274e1ddc04cf564f9314321bd23a1a8, type: 3}
+  m_Name: Character_01
+  m_EditorClassIdentifier: 
+  abilitySetupFilter: 1
+  abilityStructList:
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 200
+    - abilityType: 12
+      abilityValue: 50
+    - abilityType: 13
+      abilityValue: 30
+    - abilityType: 14
+      abilityValue: 10.000057
+    - abilityType: 21
+      abilityValue: 3.0000086
+    - abilityType: 22
+      abilityValue: 3.0000086
+    - abilityType: 31
+      abilityValue: 105
+    - abilityType: 32
+      abilityValue: 105
+    - abilityType: 51
+      abilityValue: 15
+    - abilityType: 52
+      abilityValue: 10
+    - abilityType: 53
+      abilityValue: 5
+    - abilityType: 54
+      abilityValue: 5
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 85
+    - abilityType: 102
+      abilityValue: 20
+    - abilityType: 103
+      abilityValue: 10
+    - abilityType: 104
+      abilityValue: 5
+    - abilityType: 105
+      abilityValue: 20
+    - abilityType: 106
+      abilityValue: 10
+    - abilityType: 201
+      abilityValue: 14.999943
+    - abilityType: 204
+      abilityValue: 0.0000023841858
+    - abilityType: 10001
+      abilityValue: -14000
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 200
+    - abilityType: 12
+      abilityValue: 50
+    - abilityType: 13
+      abilityValue: 30
+    - abilityType: 14
+      abilityValue: 10
+    - abilityType: 21
+      abilityValue: 3
+    - abilityType: 22
+      abilityValue: 3
+    - abilityType: 31
+      abilityValue: 100
+    - abilityType: 32
+      abilityValue: 100
+    - abilityType: 51
+      abilityValue: 15
+    - abilityType: 52
+      abilityValue: 10
+    - abilityType: 53
+      abilityValue: 5
+    - abilityType: 54
+      abilityValue: 5
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 85
+    - abilityType: 102
+      abilityValue: 20
+    - abilityType: 103
+      abilityValue: 10
+    - abilityType: 104
+      abilityValue: 5
+    - abilityType: 105
+      abilityValue: 20
+    - abilityType: 106
+      abilityValue: 10
+    - abilityType: 201
+      abilityValue: 15
+    - abilityType: 204
+      abilityValue: 0
+    - abilityType: 10001
+      abilityValue: 100
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 210
+    - abilityType: 12
+      abilityValue: 54
+    - abilityType: 13
+      abilityValue: 34
+    - abilityType: 14
+      abilityValue: 10.2
+    - abilityType: 21
+      abilityValue: 3.2
+    - abilityType: 22
+      abilityValue: 3.2
+    - abilityType: 31
+      abilityValue: 100
+    - abilityType: 32
+      abilityValue: 100
+    - abilityType: 51
+      abilityValue: 20
+    - abilityType: 52
+      abilityValue: 11
+    - abilityType: 53
+      abilityValue: 6
+    - abilityType: 54
+      abilityValue: 5.5
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 87
+    - abilityType: 102
+      abilityValue: 21
+    - abilityType: 103
+      abilityValue: 12
+    - abilityType: 104
+      abilityValue: 6
+    - abilityType: 105
+      abilityValue: 21
+    - abilityType: 106
+      abilityValue: 11
+    - abilityType: 201
+      abilityValue: 15.05
+    - abilityType: 204
+      abilityValue: 0.05
+    - abilityType: 10001
+      abilityValue: 200
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 220
+    - abilityType: 12
+      abilityValue: 58
+    - abilityType: 13
+      abilityValue: 38
+    - abilityType: 14
+      abilityValue: 10.4
+    - abilityType: 21
+      abilityValue: 3.4
+    - abilityType: 22
+      abilityValue: 3.4
+    - abilityType: 31
+      abilityValue: 100
+    - abilityType: 32
+      abilityValue: 100
+    - abilityType: 51
+      abilityValue: 25
+    - abilityType: 52
+      abilityValue: 12
+    - abilityType: 53
+      abilityValue: 7
+    - abilityType: 54
+      abilityValue: 6
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 89
+    - abilityType: 102
+      abilityValue: 22
+    - abilityType: 103
+      abilityValue: 14
+    - abilityType: 104
+      abilityValue: 7
+    - abilityType: 105
+      abilityValue: 22
+    - abilityType: 106
+      abilityValue: 12
+    - abilityType: 201
+      abilityValue: 15.1
+    - abilityType: 204
+      abilityValue: 0.1
+    - abilityType: 10001
+      abilityValue: 300
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 230
+    - abilityType: 12
+      abilityValue: 62
+    - abilityType: 13
+      abilityValue: 42
+    - abilityType: 14
+      abilityValue: 10.6
+    - abilityType: 21
+      abilityValue: 3.6
+    - abilityType: 22
+      abilityValue: 3.6
+    - abilityType: 31
+      abilityValue: 100
+    - abilityType: 32
+      abilityValue: 100
+    - abilityType: 51
+      abilityValue: 30
+    - abilityType: 52
+      abilityValue: 13
+    - abilityType: 53
+      abilityValue: 8
+    - abilityType: 54
+      abilityValue: 6.5
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 91
+    - abilityType: 102
+      abilityValue: 23
+    - abilityType: 103
+      abilityValue: 16
+    - abilityType: 104
+      abilityValue: 8
+    - abilityType: 105
+      abilityValue: 23
+    - abilityType: 106
+      abilityValue: 13
+    - abilityType: 201
+      abilityValue: 15.15
+    - abilityType: 204
+      abilityValue: 0.15
+    - abilityType: 10001
+      abilityValue: 400
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 240
+    - abilityType: 12
+      abilityValue: 66
+    - abilityType: 13
+      abilityValue: 46
+    - abilityType: 14
+      abilityValue: 10.800001
+    - abilityType: 21
+      abilityValue: 3.7999997
+    - abilityType: 22
+      abilityValue: 3.7999997
+    - abilityType: 31
+      abilityValue: 100
+    - abilityType: 32
+      abilityValue: 100
+    - abilityType: 51
+      abilityValue: 35
+    - abilityType: 52
+      abilityValue: 14
+    - abilityType: 53
+      abilityValue: 9
+    - abilityType: 54
+      abilityValue: 7
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 93
+    - abilityType: 102
+      abilityValue: 24
+    - abilityType: 103
+      abilityValue: 18
+    - abilityType: 104
+      abilityValue: 9
+    - abilityType: 105
+      abilityValue: 24
+    - abilityType: 106
+      abilityValue: 14
+    - abilityType: 201
+      abilityValue: 15.199999
+    - abilityType: 204
+      abilityValue: 0.20000002
+    - abilityType: 10001
+      abilityValue: 500
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 250
+    - abilityType: 12
+      abilityValue: 70
+    - abilityType: 13
+      abilityValue: 50
+    - abilityType: 14
+      abilityValue: 11.000001
+    - abilityType: 21
+      abilityValue: 3.9999998
+    - abilityType: 22
+      abilityValue: 3.9999998
+    - abilityType: 31
+      abilityValue: 101
+    - abilityType: 32
+      abilityValue: 101
+    - abilityType: 51
+      abilityValue: 40
+    - abilityType: 52
+      abilityValue: 15
+    - abilityType: 53
+      abilityValue: 10
+    - abilityType: 54
+      abilityValue: 7.5
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 95
+    - abilityType: 102
+      abilityValue: 25
+    - abilityType: 103
+      abilityValue: 20
+    - abilityType: 104
+      abilityValue: 10
+    - abilityType: 105
+      abilityValue: 25
+    - abilityType: 106
+      abilityValue: 15
+    - abilityType: 201
+      abilityValue: 15.249999
+    - abilityType: 204
+      abilityValue: 0.25
+    - abilityType: 10001
+      abilityValue: 700
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 260
+    - abilityType: 12
+      abilityValue: 74
+    - abilityType: 13
+      abilityValue: 54
+    - abilityType: 14
+      abilityValue: 11.200001
+    - abilityType: 21
+      abilityValue: 4.2
+    - abilityType: 22
+      abilityValue: 4.2
+    - abilityType: 31
+      abilityValue: 101
+    - abilityType: 32
+      abilityValue: 101
+    - abilityType: 51
+      abilityValue: 45
+    - abilityType: 52
+      abilityValue: 16
+    - abilityType: 53
+      abilityValue: 11
+    - abilityType: 54
+      abilityValue: 8
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 97
+    - abilityType: 102
+      abilityValue: 26
+    - abilityType: 103
+      abilityValue: 22
+    - abilityType: 104
+      abilityValue: 11
+    - abilityType: 105
+      abilityValue: 26
+    - abilityType: 106
+      abilityValue: 16
+    - abilityType: 201
+      abilityValue: 15.299999
+    - abilityType: 204
+      abilityValue: 0.3
+    - abilityType: 10001
+      abilityValue: 900
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 270
+    - abilityType: 12
+      abilityValue: 78
+    - abilityType: 13
+      abilityValue: 58
+    - abilityType: 14
+      abilityValue: 11.400001
+    - abilityType: 21
+      abilityValue: 4.4
+    - abilityType: 22
+      abilityValue: 4.4
+    - abilityType: 31
+      abilityValue: 101
+    - abilityType: 32
+      abilityValue: 101
+    - abilityType: 51
+      abilityValue: 50
+    - abilityType: 52
+      abilityValue: 17
+    - abilityType: 53
+      abilityValue: 12
+    - abilityType: 54
+      abilityValue: 8.5
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 99
+    - abilityType: 102
+      abilityValue: 27
+    - abilityType: 103
+      abilityValue: 24
+    - abilityType: 104
+      abilityValue: 12
+    - abilityType: 105
+      abilityValue: 27
+    - abilityType: 106
+      abilityValue: 17
+    - abilityType: 201
+      abilityValue: 15.349999
+    - abilityType: 204
+      abilityValue: 0.35
+    - abilityType: 10001
+      abilityValue: 1100
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 280
+    - abilityType: 12
+      abilityValue: 82
+    - abilityType: 13
+      abilityValue: 62
+    - abilityType: 14
+      abilityValue: 11.6
+    - abilityType: 21
+      abilityValue: 4.6000004
+    - abilityType: 22
+      abilityValue: 4.6000004
+    - abilityType: 31
+      abilityValue: 101
+    - abilityType: 32
+      abilityValue: 101
+    - abilityType: 51
+      abilityValue: 55
+    - abilityType: 52
+      abilityValue: 18
+    - abilityType: 53
+      abilityValue: 13
+    - abilityType: 54
+      abilityValue: 9
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 101
+    - abilityType: 102
+      abilityValue: 28
+    - abilityType: 103
+      abilityValue: 26
+    - abilityType: 104
+      abilityValue: 13
+    - abilityType: 105
+      abilityValue: 28
+    - abilityType: 106
+      abilityValue: 18
+    - abilityType: 201
+      abilityValue: 15.4
+    - abilityType: 204
+      abilityValue: 0.39999998
+    - abilityType: 10001
+      abilityValue: 1300
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 290
+    - abilityType: 12
+      abilityValue: 86
+    - abilityType: 13
+      abilityValue: 66
+    - abilityType: 14
+      abilityValue: 11.8
+    - abilityType: 21
+      abilityValue: 4.8000007
+    - abilityType: 22
+      abilityValue: 4.8000007
+    - abilityType: 31
+      abilityValue: 101
+    - abilityType: 32
+      abilityValue: 101
+    - abilityType: 51
+      abilityValue: 60
+    - abilityType: 52
+      abilityValue: 19
+    - abilityType: 53
+      abilityValue: 14
+    - abilityType: 54
+      abilityValue: 9.5
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 103
+    - abilityType: 102
+      abilityValue: 29
+    - abilityType: 103
+      abilityValue: 28
+    - abilityType: 104
+      abilityValue: 14
+    - abilityType: 105
+      abilityValue: 29
+    - abilityType: 106
+      abilityValue: 19
+    - abilityType: 201
+      abilityValue: 15.45
+    - abilityType: 204
+      abilityValue: 0.44999996
+    - abilityType: 10001
+      abilityValue: 1500
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 300
+    - abilityType: 12
+      abilityValue: 90
+    - abilityType: 13
+      abilityValue: 70
+    - abilityType: 14
+      abilityValue: 12
+    - abilityType: 21
+      abilityValue: 5.000001
+    - abilityType: 22
+      abilityValue: 5.000001
+    - abilityType: 31
+      abilityValue: 101
+    - abilityType: 32
+      abilityValue: 101
+    - abilityType: 51
+      abilityValue: 65
+    - abilityType: 52
+      abilityValue: 20
+    - abilityType: 53
+      abilityValue: 15
+    - abilityType: 54
+      abilityValue: 10
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 105
+    - abilityType: 102
+      abilityValue: 30
+    - abilityType: 103
+      abilityValue: 30
+    - abilityType: 104
+      abilityValue: 15
+    - abilityType: 105
+      abilityValue: 30
+    - abilityType: 106
+      abilityValue: 20
+    - abilityType: 201
+      abilityValue: 15.5
+    - abilityType: 204
+      abilityValue: 0.49999994
+    - abilityType: 10001
+      abilityValue: 1900
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 310
+    - abilityType: 12
+      abilityValue: 94
+    - abilityType: 13
+      abilityValue: 74
+    - abilityType: 14
+      abilityValue: 12.2
+    - abilityType: 21
+      abilityValue: 5.200001
+    - abilityType: 22
+      abilityValue: 5.200001
+    - abilityType: 31
+      abilityValue: 101
+    - abilityType: 32
+      abilityValue: 101
+    - abilityType: 51
+      abilityValue: 70
+    - abilityType: 52
+      abilityValue: 21
+    - abilityType: 53
+      abilityValue: 16
+    - abilityType: 54
+      abilityValue: 10.5
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 107
+    - abilityType: 102
+      abilityValue: 31
+    - abilityType: 103
+      abilityValue: 32
+    - abilityType: 104
+      abilityValue: 16
+    - abilityType: 105
+      abilityValue: 31
+    - abilityType: 106
+      abilityValue: 21
+    - abilityType: 201
+      abilityValue: 15.55
+    - abilityType: 204
+      abilityValue: 0.54999995
+    - abilityType: 10001
+      abilityValue: 2300
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 320
+    - abilityType: 12
+      abilityValue: 98
+    - abilityType: 13
+      abilityValue: 78
+    - abilityType: 14
+      abilityValue: 12.4
+    - abilityType: 21
+      abilityValue: 5.4000006
+    - abilityType: 22
+      abilityValue: 5.4000006
+    - abilityType: 31
+      abilityValue: 101
+    - abilityType: 32
+      abilityValue: 101
+    - abilityType: 51
+      abilityValue: 75
+    - abilityType: 52
+      abilityValue: 22
+    - abilityType: 53
+      abilityValue: 17
+    - abilityType: 54
+      abilityValue: 11
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 109
+    - abilityType: 102
+      abilityValue: 32
+    - abilityType: 103
+      abilityValue: 34
+    - abilityType: 104
+      abilityValue: 17
+    - abilityType: 105
+      abilityValue: 32
+    - abilityType: 106
+      abilityValue: 22
+    - abilityType: 201
+      abilityValue: 15.6
+    - abilityType: 204
+      abilityValue: 0.59999996
+    - abilityType: 10001
+      abilityValue: 2700
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 330
+    - abilityType: 12
+      abilityValue: 102
+    - abilityType: 13
+      abilityValue: 82
+    - abilityType: 14
+      abilityValue: 12.6
+    - abilityType: 21
+      abilityValue: 5.6000004
+    - abilityType: 22
+      abilityValue: 5.6000004
+    - abilityType: 31
+      abilityValue: 101
+    - abilityType: 32
+      abilityValue: 101
+    - abilityType: 51
+      abilityValue: 80
+    - abilityType: 52
+      abilityValue: 23
+    - abilityType: 53
+      abilityValue: 18
+    - abilityType: 54
+      abilityValue: 11.5
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 111
+    - abilityType: 102
+      abilityValue: 33
+    - abilityType: 103
+      abilityValue: 36
+    - abilityType: 104
+      abilityValue: 18
+    - abilityType: 105
+      abilityValue: 33
+    - abilityType: 106
+      abilityValue: 23
+    - abilityType: 201
+      abilityValue: 15.65
+    - abilityType: 204
+      abilityValue: 0.6499999
+    - abilityType: 10001
+      abilityValue: 3100
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 340
+    - abilityType: 12
+      abilityValue: 106
+    - abilityType: 13
+      abilityValue: 86
+    - abilityType: 14
+      abilityValue: 12.800001
+    - abilityType: 21
+      abilityValue: 5.8
+    - abilityType: 22
+      abilityValue: 5.8
+    - abilityType: 31
+      abilityValue: 101
+    - abilityType: 32
+      abilityValue: 101
+    - abilityType: 51
+      abilityValue: 85
+    - abilityType: 52
+      abilityValue: 24
+    - abilityType: 53
+      abilityValue: 19
+    - abilityType: 54
+      abilityValue: 12
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 113
+    - abilityType: 102
+      abilityValue: 34
+    - abilityType: 103
+      abilityValue: 38
+    - abilityType: 104
+      abilityValue: 19
+    - abilityType: 105
+      abilityValue: 34
+    - abilityType: 106
+      abilityValue: 24
+    - abilityType: 201
+      abilityValue: 15.699999
+    - abilityType: 204
+      abilityValue: 0.69999987
+    - abilityType: 10001
+      abilityValue: 3500
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 350
+    - abilityType: 12
+      abilityValue: 110
+    - abilityType: 13
+      abilityValue: 90
+    - abilityType: 14
+      abilityValue: 13.000001
+    - abilityType: 21
+      abilityValue: 6
+    - abilityType: 22
+      abilityValue: 6
+    - abilityType: 31
+      abilityValue: 102
+    - abilityType: 32
+      abilityValue: 102
+    - abilityType: 51
+      abilityValue: 90
+    - abilityType: 52
+      abilityValue: 25
+    - abilityType: 53
+      abilityValue: 20
+    - abilityType: 54
+      abilityValue: 12.5
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 115
+    - abilityType: 102
+      abilityValue: 35
+    - abilityType: 103
+      abilityValue: 40
+    - abilityType: 104
+      abilityValue: 20
+    - abilityType: 105
+      abilityValue: 35
+    - abilityType: 106
+      abilityValue: 25
+    - abilityType: 201
+      abilityValue: 15.749999
+    - abilityType: 204
+      abilityValue: 0.7499999
+    - abilityType: 10001
+      abilityValue: 1000
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 360
+    - abilityType: 12
+      abilityValue: 114
+    - abilityType: 13
+      abilityValue: 94
+    - abilityType: 14
+      abilityValue: 13.200001
+    - abilityType: 21
+      abilityValue: 6.2
+    - abilityType: 22
+      abilityValue: 6.2
+    - abilityType: 31
+      abilityValue: 102
+    - abilityType: 32
+      abilityValue: 102
+    - abilityType: 51
+      abilityValue: 95
+    - abilityType: 52
+      abilityValue: 26
+    - abilityType: 53
+      abilityValue: 21
+    - abilityType: 54
+      abilityValue: 13
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 117
+    - abilityType: 102
+      abilityValue: 36
+    - abilityType: 103
+      abilityValue: 42
+    - abilityType: 104
+      abilityValue: 21
+    - abilityType: 105
+      abilityValue: 36
+    - abilityType: 106
+      abilityValue: 26
+    - abilityType: 201
+      abilityValue: 15.799999
+    - abilityType: 204
+      abilityValue: 0.7999999
+    - abilityType: 10001
+      abilityValue: 1200
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 370
+    - abilityType: 12
+      abilityValue: 118
+    - abilityType: 13
+      abilityValue: 98
+    - abilityType: 14
+      abilityValue: 13.400001
+    - abilityType: 21
+      abilityValue: 6.4
+    - abilityType: 22
+      abilityValue: 6.4
+    - abilityType: 31
+      abilityValue: 102
+    - abilityType: 32
+      abilityValue: 102
+    - abilityType: 51
+      abilityValue: 100
+    - abilityType: 52
+      abilityValue: 27
+    - abilityType: 53
+      abilityValue: 22
+    - abilityType: 54
+      abilityValue: 13.5
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 119
+    - abilityType: 102
+      abilityValue: 37
+    - abilityType: 103
+      abilityValue: 44
+    - abilityType: 104
+      abilityValue: 22
+    - abilityType: 105
+      abilityValue: 37
+    - abilityType: 106
+      abilityValue: 27
+    - abilityType: 201
+      abilityValue: 15.849999
+    - abilityType: 204
+      abilityValue: 0.8499999
+    - abilityType: 10001
+      abilityValue: 1400
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 380
+    - abilityType: 12
+      abilityValue: 122
+    - abilityType: 13
+      abilityValue: 102
+    - abilityType: 14
+      abilityValue: 13.6
+    - abilityType: 21
+      abilityValue: 6.6000004
+    - abilityType: 22
+      abilityValue: 6.6000004
+    - abilityType: 31
+      abilityValue: 102
+    - abilityType: 32
+      abilityValue: 102
+    - abilityType: 51
+      abilityValue: 105
+    - abilityType: 52
+      abilityValue: 28
+    - abilityType: 53
+      abilityValue: 23
+    - abilityType: 54
+      abilityValue: 14
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 121
+    - abilityType: 102
+      abilityValue: 38
+    - abilityType: 103
+      abilityValue: 46
+    - abilityType: 104
+      abilityValue: 23
+    - abilityType: 105
+      abilityValue: 38
+    - abilityType: 106
+      abilityValue: 28
+    - abilityType: 201
+      abilityValue: 15.9
+    - abilityType: 204
+      abilityValue: 0.8999999
+    - abilityType: 10001
+      abilityValue: 1600
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 390
+    - abilityType: 12
+      abilityValue: 126
+    - abilityType: 13
+      abilityValue: 106
+    - abilityType: 14
+      abilityValue: 13.8
+    - abilityType: 21
+      abilityValue: 6.8000007
+    - abilityType: 22
+      abilityValue: 6.8000007
+    - abilityType: 31
+      abilityValue: 102
+    - abilityType: 32
+      abilityValue: 102
+    - abilityType: 51
+      abilityValue: 110
+    - abilityType: 52
+      abilityValue: 29
+    - abilityType: 53
+      abilityValue: 24
+    - abilityType: 54
+      abilityValue: 14.5
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 123
+    - abilityType: 102
+      abilityValue: 39
+    - abilityType: 103
+      abilityValue: 48
+    - abilityType: 104
+      abilityValue: 24
+    - abilityType: 105
+      abilityValue: 39
+    - abilityType: 106
+      abilityValue: 29
+    - abilityType: 201
+      abilityValue: 15.95
+    - abilityType: 204
+      abilityValue: 0.9499999
+    - abilityType: 10001
+      abilityValue: 1800
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 400
+    - abilityType: 12
+      abilityValue: 130
+    - abilityType: 13
+      abilityValue: 110
+    - abilityType: 14
+      abilityValue: 14
+    - abilityType: 21
+      abilityValue: 7.000001
+    - abilityType: 22
+      abilityValue: 7.000001
+    - abilityType: 31
+      abilityValue: 102
+    - abilityType: 32
+      abilityValue: 102
+    - abilityType: 51
+      abilityValue: 115
+    - abilityType: 52
+      abilityValue: 30
+    - abilityType: 53
+      abilityValue: 25
+    - abilityType: 54
+      abilityValue: 15
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 125
+    - abilityType: 102
+      abilityValue: 40
+    - abilityType: 103
+      abilityValue: 50
+    - abilityType: 104
+      abilityValue: 25
+    - abilityType: 105
+      abilityValue: 40
+    - abilityType: 106
+      abilityValue: 30
+    - abilityType: 201
+      abilityValue: 16
+    - abilityType: 204
+      abilityValue: 0.99999994
+    - abilityType: 10001
+      abilityValue: 2200
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 410
+    - abilityType: 12
+      abilityValue: 134
+    - abilityType: 13
+      abilityValue: 114
+    - abilityType: 14
+      abilityValue: 14.2
+    - abilityType: 21
+      abilityValue: 7.200001
+    - abilityType: 22
+      abilityValue: 7.200001
+    - abilityType: 31
+      abilityValue: 102
+    - abilityType: 32
+      abilityValue: 102
+    - abilityType: 51
+      abilityValue: 120
+    - abilityType: 52
+      abilityValue: 31
+    - abilityType: 53
+      abilityValue: 26
+    - abilityType: 54
+      abilityValue: 15.5
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 127
+    - abilityType: 102
+      abilityValue: 41
+    - abilityType: 103
+      abilityValue: 52
+    - abilityType: 104
+      abilityValue: 26
+    - abilityType: 105
+      abilityValue: 41
+    - abilityType: 106
+      abilityValue: 31
+    - abilityType: 201
+      abilityValue: 16.05
+    - abilityType: 204
+      abilityValue: 1.05
+    - abilityType: 10001
+      abilityValue: 2600
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 420
+    - abilityType: 12
+      abilityValue: 138
+    - abilityType: 13
+      abilityValue: 118
+    - abilityType: 14
+      abilityValue: 14.4
+    - abilityType: 21
+      abilityValue: 7.4000006
+    - abilityType: 22
+      abilityValue: 7.4000006
+    - abilityType: 31
+      abilityValue: 102
+    - abilityType: 32
+      abilityValue: 102
+    - abilityType: 51
+      abilityValue: 125
+    - abilityType: 52
+      abilityValue: 32
+    - abilityType: 53
+      abilityValue: 27
+    - abilityType: 54
+      abilityValue: 16
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 129
+    - abilityType: 102
+      abilityValue: 42
+    - abilityType: 103
+      abilityValue: 54
+    - abilityType: 104
+      abilityValue: 27
+    - abilityType: 105
+      abilityValue: 42
+    - abilityType: 106
+      abilityValue: 32
+    - abilityType: 201
+      abilityValue: 16.099998
+    - abilityType: 204
+      abilityValue: 1.0999999
+    - abilityType: 10001
+      abilityValue: 3000
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 430
+    - abilityType: 12
+      abilityValue: 142
+    - abilityType: 13
+      abilityValue: 122
+    - abilityType: 14
+      abilityValue: 14.6
+    - abilityType: 21
+      abilityValue: 7.6000004
+    - abilityType: 22
+      abilityValue: 7.6000004
+    - abilityType: 31
+      abilityValue: 102
+    - abilityType: 32
+      abilityValue: 102
+    - abilityType: 51
+      abilityValue: 130
+    - abilityType: 52
+      abilityValue: 33
+    - abilityType: 53
+      abilityValue: 28
+    - abilityType: 54
+      abilityValue: 16.5
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 131
+    - abilityType: 102
+      abilityValue: 43
+    - abilityType: 103
+      abilityValue: 56
+    - abilityType: 104
+      abilityValue: 28
+    - abilityType: 105
+      abilityValue: 43
+    - abilityType: 106
+      abilityValue: 33
+    - abilityType: 201
+      abilityValue: 16.149998
+    - abilityType: 204
+      abilityValue: 1.1499999
+    - abilityType: 10001
+      abilityValue: 3400
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 440
+    - abilityType: 12
+      abilityValue: 146
+    - abilityType: 13
+      abilityValue: 126
+    - abilityType: 14
+      abilityValue: 14.800001
+    - abilityType: 21
+      abilityValue: 7.8
+    - abilityType: 22
+      abilityValue: 7.8
+    - abilityType: 31
+      abilityValue: 102
+    - abilityType: 32
+      abilityValue: 102
+    - abilityType: 51
+      abilityValue: 135
+    - abilityType: 52
+      abilityValue: 34
+    - abilityType: 53
+      abilityValue: 29
+    - abilityType: 54
+      abilityValue: 17
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 133
+    - abilityType: 102
+      abilityValue: 44
+    - abilityType: 103
+      abilityValue: 58
+    - abilityType: 104
+      abilityValue: 29
+    - abilityType: 105
+      abilityValue: 44
+    - abilityType: 106
+      abilityValue: 34
+    - abilityType: 201
+      abilityValue: 16.199997
+    - abilityType: 204
+      abilityValue: 1.1999998
+    - abilityType: 10001
+      abilityValue: 3800
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 450
+    - abilityType: 12
+      abilityValue: 150
+    - abilityType: 13
+      abilityValue: 130
+    - abilityType: 14
+      abilityValue: 15.000001
+    - abilityType: 21
+      abilityValue: 8
+    - abilityType: 22
+      abilityValue: 8
+    - abilityType: 31
+      abilityValue: 103
+    - abilityType: 32
+      abilityValue: 103
+    - abilityType: 51
+      abilityValue: 140
+    - abilityType: 52
+      abilityValue: 35
+    - abilityType: 53
+      abilityValue: 30
+    - abilityType: 54
+      abilityValue: 17.5
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 135
+    - abilityType: 102
+      abilityValue: 45
+    - abilityType: 103
+      abilityValue: 60
+    - abilityType: 104
+      abilityValue: 30
+    - abilityType: 105
+      abilityValue: 45
+    - abilityType: 106
+      abilityValue: 35
+    - abilityType: 201
+      abilityValue: 16.249996
+    - abilityType: 204
+      abilityValue: 1.2499998
+    - abilityType: 10001
+      abilityValue: 4600
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 460
+    - abilityType: 12
+      abilityValue: 154
+    - abilityType: 13
+      abilityValue: 134
+    - abilityType: 14
+      abilityValue: 15.200001
+    - abilityType: 21
+      abilityValue: 8.2
+    - abilityType: 22
+      abilityValue: 8.2
+    - abilityType: 31
+      abilityValue: 103
+    - abilityType: 32
+      abilityValue: 103
+    - abilityType: 51
+      abilityValue: 145
+    - abilityType: 52
+      abilityValue: 36
+    - abilityType: 53
+      abilityValue: 31
+    - abilityType: 54
+      abilityValue: 18
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 137
+    - abilityType: 102
+      abilityValue: 46
+    - abilityType: 103
+      abilityValue: 62
+    - abilityType: 104
+      abilityValue: 31
+    - abilityType: 105
+      abilityValue: 46
+    - abilityType: 106
+      abilityValue: 36
+    - abilityType: 201
+      abilityValue: 16.299995
+    - abilityType: 204
+      abilityValue: 1.2999997
+    - abilityType: 10001
+      abilityValue: 5400
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 470
+    - abilityType: 12
+      abilityValue: 158
+    - abilityType: 13
+      abilityValue: 138
+    - abilityType: 14
+      abilityValue: 15.400001
+    - abilityType: 21
+      abilityValue: 8.4
+    - abilityType: 22
+      abilityValue: 8.4
+    - abilityType: 31
+      abilityValue: 103
+    - abilityType: 32
+      abilityValue: 103
+    - abilityType: 51
+      abilityValue: 150
+    - abilityType: 52
+      abilityValue: 37
+    - abilityType: 53
+      abilityValue: 32
+    - abilityType: 54
+      abilityValue: 18.5
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 139
+    - abilityType: 102
+      abilityValue: 47
+    - abilityType: 103
+      abilityValue: 64
+    - abilityType: 104
+      abilityValue: 32
+    - abilityType: 105
+      abilityValue: 47
+    - abilityType: 106
+      abilityValue: 37
+    - abilityType: 201
+      abilityValue: 16.349997
+    - abilityType: 204
+      abilityValue: 1.3499998
+    - abilityType: 10001
+      abilityValue: 6200
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 480
+    - abilityType: 12
+      abilityValue: 162
+    - abilityType: 13
+      abilityValue: 142
+    - abilityType: 14
+      abilityValue: 15.6
+    - abilityType: 21
+      abilityValue: 8.599999
+    - abilityType: 22
+      abilityValue: 8.599999
+    - abilityType: 31
+      abilityValue: 103
+    - abilityType: 32
+      abilityValue: 103
+    - abilityType: 51
+      abilityValue: 155
+    - abilityType: 52
+      abilityValue: 38
+    - abilityType: 53
+      abilityValue: 33
+    - abilityType: 54
+      abilityValue: 19
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 141
+    - abilityType: 102
+      abilityValue: 48
+    - abilityType: 103
+      abilityValue: 66
+    - abilityType: 104
+      abilityValue: 33
+    - abilityType: 105
+      abilityValue: 48
+    - abilityType: 106
+      abilityValue: 38
+    - abilityType: 201
+      abilityValue: 16.399998
+    - abilityType: 204
+      abilityValue: 1.3999999
+    - abilityType: 10001
+      abilityValue: 7000
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 490
+    - abilityType: 12
+      abilityValue: 166
+    - abilityType: 13
+      abilityValue: 146
+    - abilityType: 14
+      abilityValue: 15.8
+    - abilityType: 21
+      abilityValue: 8.799999
+    - abilityType: 22
+      abilityValue: 8.799999
+    - abilityType: 31
+      abilityValue: 103
+    - abilityType: 32
+      abilityValue: 103
+    - abilityType: 51
+      abilityValue: 160
+    - abilityType: 52
+      abilityValue: 39
+    - abilityType: 53
+      abilityValue: 34
+    - abilityType: 54
+      abilityValue: 19.5
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 143
+    - abilityType: 102
+      abilityValue: 49
+    - abilityType: 103
+      abilityValue: 68
+    - abilityType: 104
+      abilityValue: 34
+    - abilityType: 105
+      abilityValue: 49
+    - abilityType: 106
+      abilityValue: 39
+    - abilityType: 201
+      abilityValue: 16.449999
+    - abilityType: 204
+      abilityValue: 1.4499999
+    - abilityType: 10001
+      abilityValue: 7800
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 500
+    - abilityType: 12
+      abilityValue: 170
+    - abilityType: 13
+      abilityValue: 150
+    - abilityType: 14
+      abilityValue: 16
+    - abilityType: 21
+      abilityValue: 8.999999
+    - abilityType: 22
+      abilityValue: 8.999999
+    - abilityType: 31
+      abilityValue: 103
+    - abilityType: 32
+      abilityValue: 103
+    - abilityType: 51
+      abilityValue: 165
+    - abilityType: 52
+      abilityValue: 40
+    - abilityType: 53
+      abilityValue: 35
+    - abilityType: 54
+      abilityValue: 20
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 145
+    - abilityType: 102
+      abilityValue: 50
+    - abilityType: 103
+      abilityValue: 70
+    - abilityType: 104
+      abilityValue: 35
+    - abilityType: 105
+      abilityValue: 50
+    - abilityType: 106
+      abilityValue: 40
+    - abilityType: 201
+      abilityValue: 16.5
+    - abilityType: 204
+      abilityValue: 1.5
+    - abilityType: 10001
+      abilityValue: 2000
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 510
+    - abilityType: 12
+      abilityValue: 174
+    - abilityType: 13
+      abilityValue: 154
+    - abilityType: 14
+      abilityValue: 16.2
+    - abilityType: 21
+      abilityValue: 9.199999
+    - abilityType: 22
+      abilityValue: 9.199999
+    - abilityType: 31
+      abilityValue: 103
+    - abilityType: 32
+      abilityValue: 103
+    - abilityType: 51
+      abilityValue: 170
+    - abilityType: 52
+      abilityValue: 41
+    - abilityType: 53
+      abilityValue: 36
+    - abilityType: 54
+      abilityValue: 20.5
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 147
+    - abilityType: 102
+      abilityValue: 51
+    - abilityType: 103
+      abilityValue: 72
+    - abilityType: 104
+      abilityValue: 36
+    - abilityType: 105
+      abilityValue: 51
+    - abilityType: 106
+      abilityValue: 41
+    - abilityType: 201
+      abilityValue: 16.55
+    - abilityType: 204
+      abilityValue: 1.55
+    - abilityType: 10001
+      abilityValue: 2400
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 520
+    - abilityType: 12
+      abilityValue: 178
+    - abilityType: 13
+      abilityValue: 158
+    - abilityType: 14
+      abilityValue: 16.400002
+    - abilityType: 21
+      abilityValue: 9.399999
+    - abilityType: 22
+      abilityValue: 9.399999
+    - abilityType: 31
+      abilityValue: 103
+    - abilityType: 32
+      abilityValue: 103
+    - abilityType: 51
+      abilityValue: 175
+    - abilityType: 52
+      abilityValue: 42
+    - abilityType: 53
+      abilityValue: 37
+    - abilityType: 54
+      abilityValue: 21
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 149
+    - abilityType: 102
+      abilityValue: 52
+    - abilityType: 103
+      abilityValue: 74
+    - abilityType: 104
+      abilityValue: 37
+    - abilityType: 105
+      abilityValue: 52
+    - abilityType: 106
+      abilityValue: 42
+    - abilityType: 201
+      abilityValue: 16.599998
+    - abilityType: 204
+      abilityValue: 1.5999999
+    - abilityType: 10001
+      abilityValue: 2800
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 530
+    - abilityType: 12
+      abilityValue: 182
+    - abilityType: 13
+      abilityValue: 162
+    - abilityType: 14
+      abilityValue: 16.600002
+    - abilityType: 21
+      abilityValue: 9.599999
+    - abilityType: 22
+      abilityValue: 9.599999
+    - abilityType: 31
+      abilityValue: 103
+    - abilityType: 32
+      abilityValue: 103
+    - abilityType: 51
+      abilityValue: 180
+    - abilityType: 52
+      abilityValue: 43
+    - abilityType: 53
+      abilityValue: 38
+    - abilityType: 54
+      abilityValue: 21.5
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 151
+    - abilityType: 102
+      abilityValue: 53
+    - abilityType: 103
+      abilityValue: 76
+    - abilityType: 104
+      abilityValue: 38
+    - abilityType: 105
+      abilityValue: 53
+    - abilityType: 106
+      abilityValue: 43
+    - abilityType: 201
+      abilityValue: 16.649998
+    - abilityType: 204
+      abilityValue: 1.6499999
+    - abilityType: 10001
+      abilityValue: 3200
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 540
+    - abilityType: 12
+      abilityValue: 186
+    - abilityType: 13
+      abilityValue: 166
+    - abilityType: 14
+      abilityValue: 16.800003
+    - abilityType: 21
+      abilityValue: 9.8
+    - abilityType: 22
+      abilityValue: 9.8
+    - abilityType: 31
+      abilityValue: 103
+    - abilityType: 32
+      abilityValue: 103
+    - abilityType: 51
+      abilityValue: 185
+    - abilityType: 52
+      abilityValue: 44
+    - abilityType: 53
+      abilityValue: 39
+    - abilityType: 54
+      abilityValue: 22
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 153
+    - abilityType: 102
+      abilityValue: 54
+    - abilityType: 103
+      abilityValue: 78
+    - abilityType: 104
+      abilityValue: 39
+    - abilityType: 105
+      abilityValue: 54
+    - abilityType: 106
+      abilityValue: 44
+    - abilityType: 201
+      abilityValue: 16.699997
+    - abilityType: 204
+      abilityValue: 1.6999998
+    - abilityType: 10001
+      abilityValue: 3600
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 550
+    - abilityType: 12
+      abilityValue: 190
+    - abilityType: 13
+      abilityValue: 170
+    - abilityType: 14
+      abilityValue: 17.000004
+    - abilityType: 21
+      abilityValue: 10
+    - abilityType: 22
+      abilityValue: 10
+    - abilityType: 31
+      abilityValue: 104
+    - abilityType: 32
+      abilityValue: 104
+    - abilityType: 51
+      abilityValue: 190
+    - abilityType: 52
+      abilityValue: 45
+    - abilityType: 53
+      abilityValue: 40
+    - abilityType: 54
+      abilityValue: 22.5
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 155
+    - abilityType: 102
+      abilityValue: 55
+    - abilityType: 103
+      abilityValue: 80
+    - abilityType: 104
+      abilityValue: 40
+    - abilityType: 105
+      abilityValue: 55
+    - abilityType: 106
+      abilityValue: 45
+    - abilityType: 201
+      abilityValue: 16.749996
+    - abilityType: 204
+      abilityValue: 1.7499998
+    - abilityType: 10001
+      abilityValue: 4200
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 560
+    - abilityType: 12
+      abilityValue: 194
+    - abilityType: 13
+      abilityValue: 174
+    - abilityType: 14
+      abilityValue: 17.200005
+    - abilityType: 21
+      abilityValue: 10.2
+    - abilityType: 22
+      abilityValue: 10.2
+    - abilityType: 31
+      abilityValue: 104
+    - abilityType: 32
+      abilityValue: 104
+    - abilityType: 51
+      abilityValue: 195
+    - abilityType: 52
+      abilityValue: 46
+    - abilityType: 53
+      abilityValue: 41
+    - abilityType: 54
+      abilityValue: 23
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 157
+    - abilityType: 102
+      abilityValue: 56
+    - abilityType: 103
+      abilityValue: 82
+    - abilityType: 104
+      abilityValue: 41
+    - abilityType: 105
+      abilityValue: 56
+    - abilityType: 106
+      abilityValue: 46
+    - abilityType: 201
+      abilityValue: 16.799995
+    - abilityType: 204
+      abilityValue: 1.7999997
+    - abilityType: 10001
+      abilityValue: 4800
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 570
+    - abilityType: 12
+      abilityValue: 198
+    - abilityType: 13
+      abilityValue: 178
+    - abilityType: 14
+      abilityValue: 17.400003
+    - abilityType: 21
+      abilityValue: 10.4
+    - abilityType: 22
+      abilityValue: 10.4
+    - abilityType: 31
+      abilityValue: 104
+    - abilityType: 32
+      abilityValue: 104
+    - abilityType: 51
+      abilityValue: 200
+    - abilityType: 52
+      abilityValue: 47
+    - abilityType: 53
+      abilityValue: 42
+    - abilityType: 54
+      abilityValue: 23.5
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 159
+    - abilityType: 102
+      abilityValue: 57
+    - abilityType: 103
+      abilityValue: 84
+    - abilityType: 104
+      abilityValue: 42
+    - abilityType: 105
+      abilityValue: 57
+    - abilityType: 106
+      abilityValue: 47
+    - abilityType: 201
+      abilityValue: 16.849997
+    - abilityType: 204
+      abilityValue: 1.8499998
+    - abilityType: 10001
+      abilityValue: 5400
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 580
+    - abilityType: 12
+      abilityValue: 202
+    - abilityType: 13
+      abilityValue: 182
+    - abilityType: 14
+      abilityValue: 17.600002
+    - abilityType: 21
+      abilityValue: 10.599999
+    - abilityType: 22
+      abilityValue: 10.599999
+    - abilityType: 31
+      abilityValue: 104
+    - abilityType: 32
+      abilityValue: 104
+    - abilityType: 51
+      abilityValue: 205
+    - abilityType: 52
+      abilityValue: 48
+    - abilityType: 53
+      abilityValue: 43
+    - abilityType: 54
+      abilityValue: 24
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 161
+    - abilityType: 102
+      abilityValue: 58
+    - abilityType: 103
+      abilityValue: 86
+    - abilityType: 104
+      abilityValue: 43
+    - abilityType: 105
+      abilityValue: 58
+    - abilityType: 106
+      abilityValue: 48
+    - abilityType: 201
+      abilityValue: 16.899998
+    - abilityType: 204
+      abilityValue: 1.8999999
+    - abilityType: 10001
+      abilityValue: 6000
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 590
+    - abilityType: 12
+      abilityValue: 206
+    - abilityType: 13
+      abilityValue: 186
+    - abilityType: 14
+      abilityValue: 17.800001
+    - abilityType: 21
+      abilityValue: 10.799999
+    - abilityType: 22
+      abilityValue: 10.799999
+    - abilityType: 31
+      abilityValue: 104
+    - abilityType: 32
+      abilityValue: 104
+    - abilityType: 51
+      abilityValue: 210
+    - abilityType: 52
+      abilityValue: 49
+    - abilityType: 53
+      abilityValue: 44
+    - abilityType: 54
+      abilityValue: 24.5
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 163
+    - abilityType: 102
+      abilityValue: 59
+    - abilityType: 103
+      abilityValue: 88
+    - abilityType: 104
+      abilityValue: 44
+    - abilityType: 105
+      abilityValue: 59
+    - abilityType: 106
+      abilityValue: 49
+    - abilityType: 201
+      abilityValue: 16.949999
+    - abilityType: 204
+      abilityValue: 1.9499999
+    - abilityType: 10001
+      abilityValue: 6600
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 600
+    - abilityType: 12
+      abilityValue: 210
+    - abilityType: 13
+      abilityValue: 190
+    - abilityType: 14
+      abilityValue: 18
+    - abilityType: 21
+      abilityValue: 10.999999
+    - abilityType: 22
+      abilityValue: 10.999999
+    - abilityType: 31
+      abilityValue: 104
+    - abilityType: 32
+      abilityValue: 104
+    - abilityType: 51
+      abilityValue: 215
+    - abilityType: 52
+      abilityValue: 50
+    - abilityType: 53
+      abilityValue: 45
+    - abilityType: 54
+      abilityValue: 25
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 165
+    - abilityType: 102
+      abilityValue: 60
+    - abilityType: 103
+      abilityValue: 90
+    - abilityType: 104
+      abilityValue: 45
+    - abilityType: 105
+      abilityValue: 60
+    - abilityType: 106
+      abilityValue: 50
+    - abilityType: 201
+      abilityValue: 17
+    - abilityType: 204
+      abilityValue: 2
+    - abilityType: 10001
+      abilityValue: 7600
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 610
+    - abilityType: 12
+      abilityValue: 214
+    - abilityType: 13
+      abilityValue: 194
+    - abilityType: 14
+      abilityValue: 18.2
+    - abilityType: 21
+      abilityValue: 11.199999
+    - abilityType: 22
+      abilityValue: 11.199999
+    - abilityType: 31
+      abilityValue: 104
+    - abilityType: 32
+      abilityValue: 104
+    - abilityType: 51
+      abilityValue: 220
+    - abilityType: 52
+      abilityValue: 51
+    - abilityType: 53
+      abilityValue: 46
+    - abilityType: 54
+      abilityValue: 25.5
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 167
+    - abilityType: 102
+      abilityValue: 61
+    - abilityType: 103
+      abilityValue: 92
+    - abilityType: 104
+      abilityValue: 46
+    - abilityType: 105
+      abilityValue: 61
+    - abilityType: 106
+      abilityValue: 51
+    - abilityType: 201
+      abilityValue: 17.05
+    - abilityType: 204
+      abilityValue: 2.05
+    - abilityType: 10001
+      abilityValue: 8600
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 620
+    - abilityType: 12
+      abilityValue: 218
+    - abilityType: 13
+      abilityValue: 198
+    - abilityType: 14
+      abilityValue: 18.400002
+    - abilityType: 21
+      abilityValue: 11.399999
+    - abilityType: 22
+      abilityValue: 11.399999
+    - abilityType: 31
+      abilityValue: 104
+    - abilityType: 32
+      abilityValue: 104
+    - abilityType: 51
+      abilityValue: 225
+    - abilityType: 52
+      abilityValue: 52
+    - abilityType: 53
+      abilityValue: 47
+    - abilityType: 54
+      abilityValue: 26
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 169
+    - abilityType: 102
+      abilityValue: 62
+    - abilityType: 103
+      abilityValue: 94
+    - abilityType: 104
+      abilityValue: 47
+    - abilityType: 105
+      abilityValue: 62
+    - abilityType: 106
+      abilityValue: 52
+    - abilityType: 201
+      abilityValue: 17.099998
+    - abilityType: 204
+      abilityValue: 2.1
+    - abilityType: 10001
+      abilityValue: 9600
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 630
+    - abilityType: 12
+      abilityValue: 222
+    - abilityType: 13
+      abilityValue: 202
+    - abilityType: 14
+      abilityValue: 18.600002
+    - abilityType: 21
+      abilityValue: 11.599999
+    - abilityType: 22
+      abilityValue: 11.599999
+    - abilityType: 31
+      abilityValue: 104
+    - abilityType: 32
+      abilityValue: 104
+    - abilityType: 51
+      abilityValue: 230
+    - abilityType: 52
+      abilityValue: 53
+    - abilityType: 53
+      abilityValue: 48
+    - abilityType: 54
+      abilityValue: 26.5
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 171
+    - abilityType: 102
+      abilityValue: 63
+    - abilityType: 103
+      abilityValue: 96
+    - abilityType: 104
+      abilityValue: 48
+    - abilityType: 105
+      abilityValue: 63
+    - abilityType: 106
+      abilityValue: 53
+    - abilityType: 201
+      abilityValue: 17.149998
+    - abilityType: 204
+      abilityValue: 2.15
+    - abilityType: 10001
+      abilityValue: 10600
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 640
+    - abilityType: 12
+      abilityValue: 226
+    - abilityType: 13
+      abilityValue: 206
+    - abilityType: 14
+      abilityValue: 18.800003
+    - abilityType: 21
+      abilityValue: 11.8
+    - abilityType: 22
+      abilityValue: 11.8
+    - abilityType: 31
+      abilityValue: 104
+    - abilityType: 32
+      abilityValue: 104
+    - abilityType: 51
+      abilityValue: 235
+    - abilityType: 52
+      abilityValue: 54
+    - abilityType: 53
+      abilityValue: 49
+    - abilityType: 54
+      abilityValue: 27
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 173
+    - abilityType: 102
+      abilityValue: 64
+    - abilityType: 103
+      abilityValue: 98
+    - abilityType: 104
+      abilityValue: 49
+    - abilityType: 105
+      abilityValue: 64
+    - abilityType: 106
+      abilityValue: 54
+    - abilityType: 201
+      abilityValue: 17.199997
+    - abilityType: 204
+      abilityValue: 2.2000003
+    - abilityType: 10001
+      abilityValue: 11600
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 650
+    - abilityType: 12
+      abilityValue: 230
+    - abilityType: 13
+      abilityValue: 210
+    - abilityType: 14
+      abilityValue: 19.000004
+    - abilityType: 21
+      abilityValue: 12
+    - abilityType: 22
+      abilityValue: 12
+    - abilityType: 31
+      abilityValue: 105
+    - abilityType: 32
+      abilityValue: 105
+    - abilityType: 51
+      abilityValue: 240
+    - abilityType: 52
+      abilityValue: 55
+    - abilityType: 53
+      abilityValue: 50
+    - abilityType: 54
+      abilityValue: 27.5
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 175
+    - abilityType: 102
+      abilityValue: 65
+    - abilityType: 103
+      abilityValue: 100
+    - abilityType: 104
+      abilityValue: 50
+    - abilityType: 105
+      abilityValue: 65
+    - abilityType: 106
+      abilityValue: 55
+    - abilityType: 201
+      abilityValue: 17.249996
+    - abilityType: 204
+      abilityValue: 2.2500002
+    - abilityType: 10001
+      abilityValue: 4000
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 660
+    - abilityType: 12
+      abilityValue: 234
+    - abilityType: 13
+      abilityValue: 214
+    - abilityType: 14
+      abilityValue: 19.200005
+    - abilityType: 21
+      abilityValue: 12.2
+    - abilityType: 22
+      abilityValue: 12.2
+    - abilityType: 31
+      abilityValue: 105
+    - abilityType: 32
+      abilityValue: 105
+    - abilityType: 51
+      abilityValue: 245
+    - abilityType: 52
+      abilityValue: 56
+    - abilityType: 53
+      abilityValue: 51
+    - abilityType: 54
+      abilityValue: 28
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 177
+    - abilityType: 102
+      abilityValue: 66
+    - abilityType: 103
+      abilityValue: 102
+    - abilityType: 104
+      abilityValue: 51
+    - abilityType: 105
+      abilityValue: 66
+    - abilityType: 106
+      abilityValue: 56
+    - abilityType: 201
+      abilityValue: 17.299995
+    - abilityType: 204
+      abilityValue: 2.3000002
+    - abilityType: 10001
+      abilityValue: 4400
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 670
+    - abilityType: 12
+      abilityValue: 238
+    - abilityType: 13
+      abilityValue: 218
+    - abilityType: 14
+      abilityValue: 19.400003
+    - abilityType: 21
+      abilityValue: 12.4
+    - abilityType: 22
+      abilityValue: 12.4
+    - abilityType: 31
+      abilityValue: 105
+    - abilityType: 32
+      abilityValue: 105
+    - abilityType: 51
+      abilityValue: 250
+    - abilityType: 52
+      abilityValue: 57
+    - abilityType: 53
+      abilityValue: 52
+    - abilityType: 54
+      abilityValue: 28.5
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 179
+    - abilityType: 102
+      abilityValue: 67
+    - abilityType: 103
+      abilityValue: 104
+    - abilityType: 104
+      abilityValue: 52
+    - abilityType: 105
+      abilityValue: 67
+    - abilityType: 106
+      abilityValue: 57
+    - abilityType: 201
+      abilityValue: 17.349997
+    - abilityType: 204
+      abilityValue: 2.3500001
+    - abilityType: 10001
+      abilityValue: 4800
+  - abilityValueList:
+    - abilityType: 11
+      abilityValue: 680
+    - abilityType: 12
+      abilityValue: 242
+    - abilityType: 13
+      abilityValue: 222
+    - abilityType: 14
+      abilityValue: 19.600002
+    - abilityType: 21
+      abilityValue: 12.599999
+    - abilityType: 22
+      abilityValue: 12.599999
+    - abilityType: 31
+      abilityValue: 105
+    - abilityType: 32
+      abilityValue: 105
+    - abilityType: 51
+      abilityValue: 255
+    - abilityType: 52
+      abilityValue: 58
+    - abilityType: 53
+      abilityValue: 53
+    - abilityType: 54
+      abilityValue: 29
+    - abilityType: 55
+      abilityValue: 50
+    - abilityType: 56
+      abilityValue: 100
+    - abilityType: 101
+      abilityValue: 181
+    - abilityType: 102
+      abilityValue: 68
+    - abilityType: 103
+      abilityValue: 106
+    - abilityType: 104
+      abilityValue: 53
+    - abilityType: 105
+      abilityValue: 68
+    - abilityType: 106
+      abilityValue: 58
+    - abilityType: 201
+      abilityValue: 17.399998
+    - abilityType: 204
+      abilityValue: 2.4
+    - abilityType: 10001
+      abilityValue: 5200
+  requiredExperiencePoints: 

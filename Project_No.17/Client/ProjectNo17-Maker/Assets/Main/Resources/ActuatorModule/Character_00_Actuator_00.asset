@@ -1,0 +1,740 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1102 &-9071436693692630783
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Exit
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions:
+  - {fileID: 2597527883951062984}
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: e5eb0b9ff4dde8b4394aa5fff17d606f, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!114 &-7935623360966917404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9040d11e36f30ca43ba6f5a6c5ad5a73, type: 3}
+  m_Name: ActuatorPriority
+  m_EditorClassIdentifier: 
+  priorityOrderByList:
+  - rid: 5765312892772810879
+  - rid: 5765312892772810880
+  FormulaSystem:
+    formulas:
+    - rid: 5765312819579322610
+    - rid: 5765312819579322611
+    - rid: 5765312819579322612
+  references:
+    version: 2
+    RefIds:
+    - rid: 5765312819579322610
+      type: {class: ActuatorPriorityFormulaIndex, ns: BC.FormulaExternalGroup.ActuatorProvider, asm: BC.AIProvider}
+      data:
+        priorityOrderByIndex: 0
+    - rid: 5765312819579322611
+      type: {class: FormulaOperator, ns: BC.FormulaItem, asm: BC.OdccBase}
+      data:
+        Operator: 1
+    - rid: 5765312819579322612
+      type: {class: ActuatorPriorityFormulaIndex, ns: BC.FormulaExternalGroup.ActuatorProvider, asm: BC.AIProvider}
+      data:
+        priorityOrderByIndex: 1
+    - rid: 5765312892772810879
+      type: {class: ActuatorPriorityOrder/PriorityOrderByDistance, ns: BC.Actuator, asm: BC.AIProvider}
+      data:
+        reverseOrder: 1
+        normalizeScale: 1
+    - rid: 5765312892772810880
+      type: {class: ActuatorPriorityOrder/PriorityOrderByAbility, ns: BC.Actuator, asm: BC.AIProvider}
+      data:
+        reverseOrder: 0
+        normalizeScale: 1
+        TargetAbility: 1
+--- !u!1102 &-7191307189153470497
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: New State
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions:
+  - {fileID: 8540598309571639461}
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: dcac2fbce357363479aa37c974bb1d50, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1101 &-7000191278065804450
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 6
+    m_ConditionEvent: ActuatorState
+    m_EventTreshold: 1
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -6787299844499542311}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.1
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!1102 &-6787299844499542311
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Action
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions:
+  - {fileID: -2613721259757997960}
+  - {fileID: -5934591653422001632}
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: ae4abf48cff4f08469db93e539c89b47, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!114 &-6269887422029049084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69af63d73ffea714fa98dab0ab305d97, type: 3}
+  m_Name: ActuatorHitShape
+  m_EditorClassIdentifier: 
+  showScriptablePreview: 1
+  previewScriptableShowOption:
+    showRange: 1
+    showMinMaxRange: 1
+    showShape: 1
+    showTarget: 1
+  pivotPosition: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 5}
+  testPivotRadius: 0.1
+  showPlayModeRangePreview: 1
+  previewPlayModeShowOption:
+    showRange: 1
+    showMinMaxRange: 1
+    showShape: 0
+    showTarget: 0
+  targetingMinRange: 3
+  targetingRange: {x: 4, y: 10}
+  targetingMaxRange: 12
+  minRangeColor: {r: 1, g: 0, b: 0, a: 1}
+  rangeColor: {r: 1, g: 1, b: 0, a: 1}
+  maxRangeColor: {r: 1, g: 0, b: 0, a: 1}
+  rangeThickness: 0.08
+  shapes:
+  - isShow: 1
+    isHit: 1
+    shape:
+      rid: 5965890254190674209
+  references:
+    version: 2
+    RefIds:
+    - rid: 5965890254190674209
+      type: {class: CircleShape, ns: BC.Shape, asm: BC.Shape}
+      data:
+        anchorType: 0
+        rangeType: 1
+        Center: {x: 0, y: 0, z: 0}
+        Radius: {x: 0, y: 0}
+        startAngle: -30
+        endedAngle: 30
+        drawStyle: 3
+        color: {r: 0, g: 0, b: 1, a: 0.2}
+        subColor: {r: 0, g: 0, b: 1, a: 1}
+        thickness: 0.1
+        dashStyle:
+          type: 0
+          space: -1
+          snap: 1
+          size: 4
+          spacing: 4
+          offset: 0
+          shapeModifier: 0
+--- !u!1101 &-5934591653422001632
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: StartActuator
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 0}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 1
+  serializedVersion: 3
+  m_TransitionDuration: 0.1
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!1101 &-5195858096233878089
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: StartActuator
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 0}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 1
+  serializedVersion: 3
+  m_TransitionDuration: 0.1
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!114 &-3053542999233494259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9c405f5736e0704c85f16de103691b4, type: 3}
+  m_Name: ActuatorPlayAnimator
+  m_EditorClassIdentifier: 
+  playAnimatorController: {fileID: 8966318970021202492}
+  enterBlandTime: 0.25
+  exitBlandTime: 0.25
+  initParameters: []
+  orderEnterParameters:
+  - name: StartActuator
+    type: 4
+    floatValue: 0
+    intValue: 0
+    boolValue: 1
+  orderExitParameters:
+  - name: StartActuator
+    type: 4
+    floatValue: 0
+    intValue: 0
+    boolValue: 0
+--- !u!1109 &-2780943830202840453
+AnimatorTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 6
+    m_ConditionEvent: ActuatorState
+    m_EventTreshold: 2
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -9071436693692630783}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 1
+--- !u!1107 &-2627884793268852014
+AnimatorStateMachine:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: New Layer
+  m_ChildStates:
+  - serializedVersion: 1
+    m_State: {fileID: -7191307189153470497}
+    m_Position: {x: 300, y: 0, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -844503925877454040}
+    m_Position: {x: 300, y: 100, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -2422509463650452074}
+    m_Position: {x: 300, y: 200, z: 0}
+  m_ChildStateMachines: []
+  m_AnyStateTransitions: []
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
+  m_AnyStatePosition: {x: 40, y: 0, z: 0}
+  m_EntryPosition: {x: 40, y: 100, z: 0}
+  m_ExitPosition: {x: 40, y: 300, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: -7191307189153470497}
+--- !u!1101 &-2613721259757997960
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 6
+    m_ConditionEvent: ActuatorState
+    m_EventTreshold: 1
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -9071436693692630783}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.1
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!1102 &-2422509463650452074
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Exit
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 15a7d2448fea67240a48df1f06a702d8, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!114 &-1069420903452822490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e48ea79524ce9364d952b1c7ad48a584, type: 3}
+  m_Name: ActuatorBasic
+  m_EditorClassIdentifier: 
+  isActive: 1
+  ActuatorName: Character_00_Actuator_00
+  shieldCost: 0
+  materialCost: 0
+  batteryCost: 0
+  ammoCost: 0
+  cooldown: 0
+  UserUnitAI_CanUseAuto: 1
+  IsCanCancelInPlay: 1
+  IsImmediateCancel: 0
+--- !u!1102 &-844503925877454040
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: New State 0
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions:
+  - {fileID: 1170385391782748431}
+  m_StateMachineBehaviours:
+  - {fileID: 6964710647508976708}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: d1dd4c122349199428b09d458ce17e12, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!114 &-655889753973121529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d7fe71a66018364bba76887e9ae0b02, type: 3}
+  m_Name: ActuatorTarget
+  m_EditorClassIdentifier: 
+  isNonTarget: 0
+  targetType: 1
+  hitTargetLayerMask:
+    serializedVersion: 2
+    m_Bits: 2048
+  FormulaSystem:
+    formulas:
+    - rid: 5765312819579322569
+    - rid: 5765312819579322570
+  references:
+    version: 2
+    RefIds:
+    - rid: 5765312819579322569
+      type: {class: ActuatorFormulaAbility, ns: BC.FormulaExternalGroup.ActuatorEffector, asm: BC.AIProvider}
+      data:
+        getter: 1
+        ability: 1
+        option: 0
+        scale: 1
+        min: 0
+        max: 0
+        offset: 0
+        curve:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+    - rid: 5765312819579322570
+      type: {class: FormulaConditionSelf, ns: BC.FormulaItem.Branch, asm: BC.OdccBase}
+      data:
+        conditionOperator: 2
+        C:
+          rid: 5765312819579322572
+        True:
+          rid: 5765312819579322573
+        False:
+          rid: 5765312819579322574
+    - rid: 5765312819579322572
+      type: {class: FormulaValue_Zero, ns: BC.FormulaItem.Value, asm: BC.OdccBase}
+      data: 
+    - rid: 5765312819579322573
+      type: {class: FormulaValue_Bool, ns: BC.FormulaItem.Value, asm: BC.OdccBase}
+      data:
+        value: 1
+    - rid: 5765312819579322574
+      type: {class: FormulaValue_Bool, ns: BC.FormulaItem.Value, asm: BC.OdccBase}
+      data:
+        value: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f55aaecd60ca4479fe205741988e16, type: 3}
+  m_Name: Character_00_Actuator_00
+  m_EditorClassIdentifier: 
+  basic: {fileID: -1069420903452822490}
+  hitShape: {fileID: -6269887422029049084}
+  priority: {fileID: -7935623360966917404}
+  target: {fileID: -655889753973121529}
+  animator: {fileID: -3053542999233494259}
+  formula: {fileID: 8259226879147581174}
+  instance: {fileID: 7103552909178942472}
+  TestOrder:
+    abilitys: []
+  TestTarget:
+    abilitys: []
+--- !u!1101 &1170385391782748431
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions: []
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -2422509463650452074}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.1
+  m_TransitionOffset: 0
+  m_ExitTime: 0.95
+  m_HasExitTime: 1
+  m_HasFixedDuration: 0
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!1101 &2597527883951062984
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: StartActuator
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 0}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 1
+  serializedVersion: 3
+  m_TransitionDuration: 0.1
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!114 &6964710647508976708
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebbb0943106be7b4483665f6722a28c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enterEventKey:
+  - functionName: OnTrigger
+    stringParameter: 
+    floatParameter: 0
+    intParameter: 0
+    objectReferenceParameter: {fileID: 0}
+  exitEventKey: []
+--- !u!1102 &7088464419782307445
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Enter
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions:
+  - {fileID: -7000191278065804450}
+  - {fileID: -5195858096233878089}
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: d6a8faa5bfa242c4789a62f0f9ee60bb, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!114 &7103552909178942472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f158ab63e374d409101c0cef5d7cb5, type: 3}
+  m_Name: ActuatorInstance
+  m_EditorClassIdentifier: 
+  instanceObjects:
+  - prefabObject: {fileID: 8722525933425681813, guid: 82b7375998edc1b4db68aed46bfdf49a, type: 3}
+    isActive: 1
+    triggerID: 0
+    effectorType: 1
+    istanceRequests:
+    - requestDelay: 0
+      requestPerCount: 1
+    dataList:
+    - rid: 5765312862420992134
+    overrideFormulas: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 5765312862420992134
+      type: {class: ProjectileInitData, ns: BC.OdccBase, asm: BC.OdccBase}
+      data:
+        maxLifeTime: 10
+        maxHitCount: 1
+        moveSpeed: 30
+        hitUnitRelationType: 3
+        projectileLayer:
+          serializedVersion: 2
+          m_Bits: 32768
+        blockingLayer:
+          serializedVersion: 2
+          m_Bits: 65625
+        hitEffectLayer:
+          serializedVersion: 2
+          m_Bits: 2048
+--- !u!1109 &8231603417741955751
+AnimatorTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 6
+    m_ConditionEvent: ActuatorState
+    m_EventTreshold: 1
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -6787299844499542311}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 1
+--- !u!114 &8259226879147581174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9520a7aa20a7874dbc93d4a75878d14, type: 3}
+  m_Name: ActuatorFormulaItem
+  m_EditorClassIdentifier: 
+  parent: {fileID: 11400000, guid: 220be755e0a56a14599a22268d152cc4, type: 2}
+  actuatorFormulaItemList: []
+  references:
+    version: 2
+    RefIds: []
+--- !u!1101 &8540598309571639461
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions: []
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -844503925877454040}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.1
+  m_TransitionOffset: 0
+  m_ExitTime: 0.95
+  m_HasExitTime: 1
+  m_HasFixedDuration: 0
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!91 &8966318970021202492
+AnimatorController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Character_00_Actuator_00_Animator
+  serializedVersion: 5
+  m_AnimatorParameters: []
+  m_AnimatorLayers:
+  - serializedVersion: 5
+    m_Name: New Layer
+    m_StateMachine: {fileID: -2627884793268852014}
+    m_Mask: {fileID: 0}
+    m_Motions: []
+    m_Behaviours: []
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: -1
+    m_DefaultWeight: 0
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 8966318970021202492}

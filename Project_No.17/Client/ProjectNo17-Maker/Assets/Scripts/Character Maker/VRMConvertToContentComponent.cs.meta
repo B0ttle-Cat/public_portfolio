@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e21197c61ec949e44b183792a4ff370b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - VrmModelTarget: {instanceID: 0}
+  - runtimeAnimatorController: {fileID: 9100000, guid: 586ad1efa57b31b469321470245ade3c, type: 2}
+  - magicaClothConvertMappingData: {fileID: 11400000, guid: 30c68b5947339eb4a8f86d8bf6df32ae, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

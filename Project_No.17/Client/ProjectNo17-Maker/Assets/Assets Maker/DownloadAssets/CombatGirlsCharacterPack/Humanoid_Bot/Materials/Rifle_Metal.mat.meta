@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b6bf68e3580dc3d439e212fc250c85e8
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305180
+  packageName: CombatGirls_RifleCharacterPack
+  packageVersion: 1.0
+  assetPath: Assets/CombatGirlsCharacterPack/Humanoid_Bot/Materials/Rifle_Metal.mat
+  uploadId: 716902

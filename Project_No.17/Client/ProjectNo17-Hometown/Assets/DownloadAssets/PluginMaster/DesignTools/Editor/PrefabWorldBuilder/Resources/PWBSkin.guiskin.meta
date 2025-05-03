@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 315ba4bda2e157f4ca3838cbaf28cb56
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 185406
+  packageName: Prefab World Builder
+  packageVersion: 4.5.1
+  assetPath: Assets/PluginMaster/DesignTools/Editor/PrefabWorldBuilder/Resources/PWBSkin.guiskin
+  uploadId: 723190
